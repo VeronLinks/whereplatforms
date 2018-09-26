@@ -26,6 +26,4 @@ public class EnemiesMovement : MonoBehaviour
         transform.LookAt(thePlayer.transform.position);
 	}
 
-    
-
 }
