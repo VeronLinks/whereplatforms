@@ -4,24 +4,32 @@ using UnityEngine;
 
 public class CharController : MonoBehaviour {
 
+    #region Public Attributes
     public float maxVel = 10.0f;
     public float accel = 20.0f;
     public float maxRotVel = 120.0f;
     public float accelAngular = 240.0f;
-    //public GameObject lCollider;
-    //public GameObject rCollider;
+    [Range(0.0f, 1.0f)]
+    public float horizontalVelMultiplier = 0.8f;
+    public float jumpSpeed = 8.0f;
+    public float gravity = -9.8f;
+    #endregion
 
-    //private Animator anim;
-    private float velocityLinear = 0.0f;
-    private float velocityAngular = 0.0f;
+    #region Private Attributes
+    private float vvelocityLinear = 0.0f;
+    private float hvelocityLinear = 0.0f;
+    private Vector3 moveDirection = Vector3.zero;
+    //private float velocityAngular = 0.0f;
     private CharacterController controller;
 
+    #region Properties
     private float verticalAxis;
     private float horizontalAxis;
+    private bool jumpTrigger = false;
     private bool attacking = false;
-    //private bool canMove = true;
     private bool alive = true;
     private Vector3 initialPos;
+    #endregion
 
     public float VerticalAxis
     {
@@ -33,25 +41,25 @@ public class CharController : MonoBehaviour {
         get { return horizontalAxis; }
         set { horizontalAxis = value; }
     }
+    public bool JumpTrigger
+    {
+        get { return jumpTrigger; }
+        set { jumpTrigger = value; }
+    }
     public bool Attacking
     {
         get { return attacking; }
         set { attacking = value; }
     }
-    /*public bool CanMove
-    {
-        get { return canMove; }
-        set { canMove = value; }
-    }*/
     public bool Alive
     {
         get { return alive; }
         set { alive = value; }
     }
+    #endregion
 
     void Start()
     {
-        //anim = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
         initialPos = transform.position;
     }
@@ -60,36 +68,42 @@ public class CharController : MonoBehaviour {
     {
         float dt = Time.deltaTime;
 
-        /*if (!canMove)
-        {
-            horizontalAxis = 0.0f;
-            verticalAxis = 0.0f;
-        }
-
-        if (lCollider != null)
-        {
-            lCollider.SetActive(!canMove);
-        }
-        if (rCollider != null)
-        {
-            rCollider.SetActive(!canMove);
-        }*/
-
         float vTarget = verticalAxis * maxVel;
-        float voffset = vTarget - velocityLinear;
-        velocityLinear += Mathf.Clamp(voffset, -accel * dt, accel * dt);
+        float voffset = vTarget - vvelocityLinear;
+        vvelocityLinear += Mathf.Clamp(voffset, -accel * dt, accel * dt);
+        moveDirection.z = vvelocityLinear;
 
-        float vTargetRot = horizontalAxis * maxRotVel;
-        float voffsetRot = vTargetRot - velocityAngular;
-        velocityAngular += Mathf.Clamp(voffsetRot, -2 * accelAngular * dt, 2 * accelAngular * dt);
+        float hTarget = horizontalAxis * maxVel * horizontalVelMultiplier;
+        float hoffset = hTarget - hvelocityLinear;
+        hvelocityLinear += Mathf.Clamp(hoffset, -accel * dt, accel * dt);
+        moveDirection.x = hvelocityLinear;
 
-        transform.eulerAngles += new Vector3(0.0f, velocityAngular * dt, 0.0f);
-        controller.Move((velocityLinear * dt) * transform.forward);
-        //anim.SetFloat("Input X", velocityLinear);
+        if (controller.isGrounded)
+        {
+            if (jumpTrigger)
+            {
+                moveDirection.y = jumpSpeed;
+                jumpTrigger = false;
+            }
+        }
+        else
+        {
+            //apply gravity if you aren't grounded
+            moveDirection.y += gravity * dt;
+        }
+
+        //apply the movement to the controller
+        controller.Move(moveDirection * dt);
+
+        /* float vTargetRot = horizontalAxis * maxRotVel;
+         float voffsetRot = vTargetRot - velocityAngular;
+         velocityAngular += Mathf.Clamp(voffsetRot, -2 * accelAngular * dt, 2 * accelAngular * dt);*/
+
+        //transform.eulerAngles += new Vector3(0.0f, velocityAngular * dt, 0.0f);
+        
 
         if (attacking)
         {
-            //anim.SetTrigger("Attack1Trigger");
             attacking = false;
         }
 
@@ -99,4 +113,7 @@ public class CharController : MonoBehaviour {
             alive = true;
         }
     }
+
+    #region Methods
+    #endregion
 }
