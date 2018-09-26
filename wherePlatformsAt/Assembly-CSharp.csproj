@@ -61,15 +61,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
+    <Compile Include="Assets\Scripts\ButtonManager.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\CharController.cs" />
-    <Compile Include="Assets\Scripts\FirstPersonCamera.cs" />
-=======
-    <Compile Include="Assets\Scripts\ButtonManager.cs" />
-    <Compile Include="Assets\Scripts\CharController.cs" />
     <Compile Include="Assets\Scripts\EnemiesMovement.cs" />
->>>>>>> 54565f5eef389ca9fee1a3590833c1f666296ff8
+    <Compile Include="Assets\Scripts\FirstPersonCamera.cs" />
     <Compile Include="Assets\Scripts\PlatformMovement.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Reference Include="UnityEditor.StandardEvents">
