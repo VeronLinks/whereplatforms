@@ -41,6 +41,11 @@ public class CharController : MonoBehaviour {
         get { return horizontalAxis; }
         set { horizontalAxis = value; }
     }
+    public Vector3 MoveDirection
+    {
+        get { return moveDirection; }
+        set { moveDirection = value; }
+    }
     public bool JumpTrigger
     {
         get { return jumpTrigger; }
@@ -92,7 +97,13 @@ public class CharController : MonoBehaviour {
             moveDirection.y += gravity * dt;
         }
 
+
+
         //apply the movement to the controller
+        //controller.Move(Vector3.right * moveDirection.x * dt + Vector3.up * moveDirection.y * dt + Vector3.forward * moveDirection.z * dt);
+
+        moveDirection = transform.TransformDirection(moveDirection);
+
         controller.Move(moveDirection * dt);
 
         /* float vTargetRot = horizontalAxis * maxRotVel;
@@ -100,12 +111,12 @@ public class CharController : MonoBehaviour {
          velocityAngular += Mathf.Clamp(voffsetRot, -2 * accelAngular * dt, 2 * accelAngular * dt);*/
 
         //transform.eulerAngles += new Vector3(0.0f, velocityAngular * dt, 0.0f);
-        
 
-        if (attacking)
+
+        /*if (attacking)
         {
             attacking = false;
-        }
+        }*/
 
         if (!alive)
         {
