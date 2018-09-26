@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -259,13 +259,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 420358989}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 30, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &640036161
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,6 +276,8 @@ GameObject:
   - component: {fileID: 640036164}
   - component: {fileID: 640036163}
   - component: {fileID: 640036162}
+  - component: {fileID: 640036165}
+  - component: {fileID: 640036166}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -343,6 +345,47 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 15.73, y: 0, z: 0}
+--- !u!114 &640036165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 640036161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f754de230a862f43bad5ad6b8481d82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseOffset: {x: 0, y: 3, z: -8}
+  lookAtOffset: {x: 0, y: 0, z: 8}
+  target: {fileID: 1058038223}
+  springK: 10
+  damping: 5
+  maxDistFromIdealPos: 2.5
+--- !u!114 &640036166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 640036161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5197e52cca40d904f80be8626e1daac6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sensitivity: 1
+  smoothing: 2
+  character: {fileID: 1058038216}
+--- !u!1 &1058038216 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1566597539557106, guid: 9bbc86a195c55fe48a46d02c637a4f84,
+    type: 2}
+  m_PrefabInternal: {fileID: 1262903576}
+--- !u!4 &1058038223 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4415596051503420, guid: 9bbc86a195c55fe48a46d02c637a4f84,
+    type: 2}
+  m_PrefabInternal: {fileID: 1262903576}
 --- !u!1001 &1262903576
 Prefab:
   m_ObjectHideFlags: 0
