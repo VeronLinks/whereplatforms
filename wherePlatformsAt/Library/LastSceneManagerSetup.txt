@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
+- path: Assets/Scenes/DemoMovingPlatforms.unity
+=======
 - path: Assets/Scenes/DemoEnemies.unity
+>>>>>>> 94038bf685530bfad8615c7c3dea7c04943c0ee1
   isLoaded: 1
   isActive: 1

@@ -4,21 +4,13 @@ using UnityEngine;
 
 public class AttachToPlatform : MonoBehaviour
 {
-    public CharacterController charPlayer;
-    public PlatformMovement pM;
     public GameObject Player;
-    
-    //void OnCollisionEnter(Collision other)
-    //{
-    //    charPlayer.Move(pM.direction.normalized * pM.speed * Time.deltaTime);
-    //}
-
 
     void OnTriggerEnter(Collider other)
     {
-        //charPlayer.Move(pM.direction.normalized * pM.speed * Time.deltaTime);
         if (other.gameObject == Player)
         {
+            //The player has the same speed and direction as the platform
             other.transform.parent = gameObject.transform;
         }
     }
