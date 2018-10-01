@@ -190,6 +190,7 @@ MonoBehaviour:
   accelAngular: 240
   horizontalVelMultiplier: 0.8
   jumpSpeed: 8
+  jumpingSecondsSet: 1
   gravity: -9.8
 --- !u!114 &114432378350014190
 MonoBehaviour:

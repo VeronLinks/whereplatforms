@@ -12,6 +12,7 @@ public class CharController : MonoBehaviour {
     [Range(0.0f, 1.0f)]
     public float horizontalVelMultiplier = 0.8f;
     public float jumpSpeed = 8.0f;
+    public float jumpingSecondsSet = 1.0f;
     public float gravity = -9.8f;
     #endregion
 
@@ -21,8 +22,9 @@ public class CharController : MonoBehaviour {
     private Vector3 moveDirection = Vector3.zero;
     //private float velocityAngular = 0.0f;
     private CharacterController controller;
+    private float jumpingCount = 0;
+    private bool ableToJump = true;
 
-    #region Properties
     private float verticalAxis;
     private float horizontalAxis;
     private bool jumpTrigger = false;
@@ -31,6 +33,7 @@ public class CharController : MonoBehaviour {
     private Vector3 initialPos;
     #endregion
 
+    #region Properties
     public float VerticalAxis
     {
         get { return verticalAxis; }
@@ -85,16 +88,27 @@ public class CharController : MonoBehaviour {
 
         if (controller.isGrounded)
         {
-            if (jumpTrigger)
+            if (jumpTrigger && ableToJump)
             {
                 moveDirection.y = jumpSpeed;
-                jumpTrigger = false;
+                ableToJump = false;
+            }
+            if (!jumpTrigger)
+            {
+                ableToJump = true;
             }
         }
         else
         {
-            //apply gravity if you aren't grounded
+            jumpingCount += Time.deltaTime;
+            if (!jumpTrigger || jumpingCount >= jumpingSecondsSet)
+            {
+                moveDirection.y += 2 * gravity * dt;
+                jumpingCount = 0;
+            }
             moveDirection.y += gravity * dt;
+            //apply gravity if you aren't grounded
+
         }
 
 

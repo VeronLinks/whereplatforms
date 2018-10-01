@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour {
     {
         playerChar.VerticalAxis = Input.GetAxisRaw("Vertical");
         playerChar.HorizontalAxis = Input.GetAxisRaw("Horizontal");
-        playerChar.JumpTrigger = Input.GetKeyDown(KeyCode.Space);
+        playerChar.JumpTrigger = Input.GetKey(KeyCode.Space);
 
         //playerChar.Attacking = Input.GetButtonDown("Fire1");
         if (Input.GetMouseButton(0))
