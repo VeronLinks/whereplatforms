@@ -283,8 +283,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f5827a448cd474386e1cedbbb120ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charPlayer: {fileID: 0}
-  pM: {fileID: 0}
   Player: {fileID: 1412736313}
 --- !u!23 &215164276
 MeshRenderer:
@@ -344,7 +342,6 @@ MonoBehaviour:
   - {fileID: 1851647738}
   - {fileID: 188615629}
   waypointIndex: 0
-  direction: {x: 0, y: 0, z: 0}
 --- !u!65 &215164279
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -749,6 +746,17 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 89.659004
       objectReference: {fileID: 0}
+    - target: {fileID: 114432378350014190, guid: 9bbc86a195c55fe48a46d02c637a4f84,
+        type: 2}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 1392964894001376, guid: 21cfa87245066344dba8dda882785221,
+        type: 2}
+    - target: {fileID: 114432378350014190, guid: 9bbc86a195c55fe48a46d02c637a4f84,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1412736313}
     m_RemovedComponents:
     - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 9bbc86a195c55fe48a46d02c637a4f84, type: 2}

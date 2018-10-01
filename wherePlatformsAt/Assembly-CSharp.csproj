@@ -62,14 +62,15 @@
      <Compile Include="Assets\Scripts\Platform\LavaFloor.cs" />
      <Compile Include="Assets\Scripts\Platform\PlatformMovement.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\Shooting\bullet.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>C:/Users/Jack/Documents/GitHub/whereplatforms/wherePlatformsAt/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
- <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>C:/Users/Jack/Documents/GitHub/whereplatforms/wherePlatformsAt/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
- </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/Jack/Documents/GitHub/whereplatforms/wherePlatformsAt/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.PackageManagerUI.Editor">
+ <HintPath>C:/Users/Jack/Documents/GitHub/whereplatforms/wherePlatformsAt/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
  <HintPath>C:/Users/Jack/Documents/GitHub/whereplatforms/wherePlatformsAt/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
