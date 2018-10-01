@@ -108,7 +108,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 1
-  controlID: 1372
+  controlID: 124
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 1373
+  controlID: 125
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 442}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 1326
+  controlID: 126
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -231,7 +231,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 492}
   m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
-  controlID: 1374
+  controlID: 25
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -414,14 +414,14 @@ MonoBehaviour:
     height: 432
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 0
-  lastFramingTime: 2281.9577572
+  lastFramingTime: 574.410252924673
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0, y: 1.115, z: 0.265}
+    m_Target: {x: 10.385336, y: 1.1362413, z: 0.8033983}
     speed: 2
-    m_Value: {x: 0, y: 1.115, z: 0.265}
+    m_Value: {x: 10.385336, y: 1.1362413, z: 0.8033983}
   m_RenderMode: 2
   m_CameraMode:
     drawMode: 2
@@ -449,13 +449,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.3015418, y: -0.0019994576, z: 0.0006323283, w: 0.9534506}
+    m_Target: {x: -0.0068341964, y: -0.94534665, z: -0.019855214, w: 0.32539028}
     speed: 2
-    m_Value: {x: -0.30154178, y: 0.0019994576, z: -0.0006323282, w: -0.9534506}
+    m_Value: {x: -0.0068341964, y: -0.94534665, z: -0.019855214, w: 0.32539028}
   m_Size:
-    m_Target: 4.5071893
+    m_Target: 0.36510518
     speed: 2
-    m_Value: 4.5071893
+    m_Value: 0.36510518
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -496,18 +496,18 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 90c2feffdec7feff881bffff4e20ffff2a30ffff9635ffff6a48ffff1e52ffff4a7affffd886ffff90f8ffffe6fbffff000000005e360000
+    m_ExpandedIDs: e2fafeffeee1ffffe2f0fffffcf0ffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Main Camera
-      m_OriginalName: Main Camera
+      m_Name: GameObject
+      m_OriginalName: GameObject
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 13072
+      m_UserData: -33156
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -557,7 +557,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Prefabs
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
@@ -569,7 +569,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: ea2b0000
     m_LastClickedID: 11242
-    m_ExpandedIDs: ffffffff00000000802b0000402c00008a2c0000602d0000162e0000c62e0000
+    m_ExpandedIDs: 000000005c300000143100006031000028320000d832000038330000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -597,18 +597,18 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000802b0000402c00008a2c0000602d0000162e0000c62e0000
+    m_ExpandedIDs: 748efeffce9dfeff2aeafeff002effffffffffff00000000622f00005c300000143100006031000028320000d8320000383300005a340000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: DemoEnemies
-      m_OriginalName: DemoEnemies
+      m_Name: CameraController
+      m_OriginalName: CameraController
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 11280
+      m_UserData: 11810
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
