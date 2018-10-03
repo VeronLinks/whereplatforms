@@ -25,6 +25,8 @@ public class CharController : MonoBehaviour {
     private float jumpingCount = 0;
     private bool ableToJump = true;
     private Animator anim;
+    private float cameraInitialY;
+    private float cameraInitialZ;
 
     private float verticalAxis;
     private float horizontalAxis;
