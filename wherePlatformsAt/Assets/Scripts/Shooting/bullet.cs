@@ -19,11 +19,9 @@ public class bullet : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-<<<<<<< HEAD
         transform.Translate(transform.forward * speed1 * Time.deltaTime);
-=======
+
         //transform.Translate(player.transform.forward * speed1);
         transform.position = Vector3.MoveTowards(transform.position, target2, speed1 * Time.deltaTime);
->>>>>>> 2f42e3ca721b4dcf79f2875e2983a90a22f71001
     }
 }

@@ -121,3 +121,4 @@ MonoBehaviour:
   sensitivity: 1
   smoothing: 2
   character: {fileID: 0}
+  characterReference: {fileID: 0}
