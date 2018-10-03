@@ -94,7 +94,6 @@
      <Compile Include="Assets\Scripts\Platform\AttachToPlatform.cs" />
      <Compile Include="Assets\Scripts\Platform\LavaFloor.cs" />
      <Compile Include="Assets\Scripts\Platform\PlatformMovement.cs" />
-     <Compile Include="Assets\Scripts\Shooting\bullet.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>C:/Users/Jack/Documents/GitHub/whereplatforms/wherePlatformsAt/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>

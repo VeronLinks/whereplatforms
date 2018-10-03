@@ -204,6 +204,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 1392964894001376, guid: 21cfa87245066344dba8dda882785221, type: 2}
+  Paint: {fileID: 1581633807235494, guid: 00df471bcd6de5445950021ea48497c8, type: 2}
+  firePoint: {fileID: 0}
 --- !u!136 &136659451972492992
 CapsuleCollider:
   m_ObjectHideFlags: 1

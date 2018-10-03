@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33556996670496200}
   - component: {fileID: 23818935273118758}
   - component: {fileID: 135014336851315654}
-  - component: {fileID: 114254214501770230}
+  - component: {fileID: 114119310294448330}
   - component: {fileID: 54175060911960844}
   m_Layer: 0
   m_Name: bulletPlaceholder
@@ -101,7 +101,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &114254214501770230
+--- !u!114 &114119310294448330
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
