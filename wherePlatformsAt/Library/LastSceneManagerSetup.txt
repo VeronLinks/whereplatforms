@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/VeronDemoScene.unity
+=======
+- path: Assets/Scenes/DemoMovingPlatforms.unity
+>>>>>>> 6ddfaa306bb295030efae83ab11c10cbbbf0fa6f
   isLoaded: 1
   isActive: 1

@@ -28,15 +28,15 @@ public class PlayerController : MonoBehaviour {
         playerChar.VerticalAxis = Input.GetAxisRaw("Vertical");
         playerChar.HorizontalAxis = Input.GetAxisRaw("Horizontal");
         playerChar.JumpTrigger = Input.GetKey(KeyCode.Space);
-
         //playerChar.Attacking = Input.GetButtonDown("Fire1");
-        if (Input.GetMouseButton(0) && ammo > 0)
+
+        if (Input.GetMouseButton(0) && ammo > 0) //fires if the mouse button is clicked and you have ammo
         {
             if (canFire)
             {
                 canFire = false;
                 Fire();
-                ammo--;
+                ammo--; 
             }
         }
 
@@ -48,10 +48,19 @@ public class PlayerController : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Paint")
+        if (other.gameObject.name == "Paint") //if player collides with the paint prefab
         {
             Destroy(other.gameObject);
             ammo += 5;
+            if(ammo > 25) //limits ammo to 25
+            {
+                ammo = 25;
+            }
         }
+    }
+
+    void OnGUI() //prints ammo out to the screen
+    {
+        GUI.Box(new Rect(10, 10, 100, 30), "Ammo: " + ammo);
     }
 }
