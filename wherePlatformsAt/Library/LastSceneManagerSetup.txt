@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/Practice level 1.unity
+=======
+- path: Assets/Scenes/VeronDemoScene.unity
+>>>>>>> d7653e3df168b663ee3c315aaf565a60b0885ec3
   isLoaded: 1
   isActive: 1

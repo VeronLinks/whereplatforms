@@ -8,24 +8,25 @@ public class PlatformMovement : MonoBehaviour {
     public GameObject[] waypoints;
     public int waypointIndex = 0;
 
-    public Vector3 direction = Vector3.zero;
-
     // Use this for initialization
-    void Start () {
-		
-	}
+    void Start () {}
 	
 	// Update is called once per frame
 	void Update () {
+
         float speedDelta = speed * Time.deltaTime;
 
         Vector3 platformPosition = transform.position;
         Vector3 target = waypoints[waypointIndex].transform.position;
         Vector3 rangeToClose = target - platformPosition;
 
+<<<<<<< HEAD
         direction = target - platformPosition;
 
         float distance = Mathf.Sqrt(rangeToClose.x * rangeToClose.x + rangeToClose.y * rangeToClose.y + rangeToClose.z* rangeToClose.z);
+=======
+        float distance = Mathf.Sqrt(rangeToClose.x * rangeToClose.x + rangeToClose.y * rangeToClose.y);
+>>>>>>> d7653e3df168b663ee3c315aaf565a60b0885ec3
 
         float newx = rangeToClose.x / distance;
         float newy = rangeToClose.y / distance;
