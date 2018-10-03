@@ -20,12 +20,13 @@ public class PlatformMovement : MonoBehaviour {
         Vector3 target = waypoints[waypointIndex].transform.position;
         Vector3 rangeToClose = target - platformPosition;
 
-        float distance = Mathf.Sqrt(rangeToClose.x * rangeToClose.x + rangeToClose.y * rangeToClose.y);
+        float distance = Mathf.Sqrt(rangeToClose.x * rangeToClose.x + rangeToClose.y * rangeToClose.y + rangeToClose.z* rangeToClose.z);
 
         float newx = rangeToClose.x / distance;
         float newy = rangeToClose.y / distance;
+        float newz = rangeToClose.z / distance;
 
-        Vector3 norm = new Vector3(newx, newy);
+        Vector3 norm = new Vector3(newx, newy,newz);
 
         if (distance > speedDelta)
         {

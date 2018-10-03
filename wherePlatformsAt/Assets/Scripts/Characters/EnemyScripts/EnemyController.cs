@@ -1,4 +1,4 @@
-﻿    using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,7 +13,7 @@ public class EnemyController : MonoBehaviour
     private float timeBtwShots;
     public float startTimeBtwShots;
     public GameObject bullet;
-    public Transform firePosition;
+    public GameObject firePosition;
 
 	// Use this for initialization
 	void Start ()
@@ -35,7 +35,7 @@ public class EnemyController : MonoBehaviour
 
         if(timeBtwShots <= 0)
         {
-            Instantiate(bullet, firePosition.position, Quaternion.identity);
+            Instantiate(bullet.transform, firePosition.transform.position, Quaternion.identity);
             timeBtwShots = startTimeBtwShots;
         }
         else
