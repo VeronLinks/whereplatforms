@@ -10,6 +10,10 @@ test_Data/
 
 # Visual Studio 2015 cache directory
 /.vs/
+Library/metadata
+Library/CurrentLayout.dwlt
+Assembly-CSharp.csproj
+Library/ScriptMapper
 
 #Project version
 ProjectSettings/ProjectVersion.txt
@@ -41,3 +45,4 @@ sysinfo.txt
 *.unitypackage
 #.exe
 wherePlatformsAt/.vs/wherePlatformsAt/v15/Server/sqlite3/db.lock
+wherePlatformsAt/Assets/Art.meta
