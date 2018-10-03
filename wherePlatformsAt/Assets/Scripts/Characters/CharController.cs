@@ -24,6 +24,7 @@ public class CharController : MonoBehaviour {
     private CharacterController controller;
     private float jumpingCount = 0;
     private bool ableToJump = true;
+    private Animator anim;
 
     private float verticalAxis;
     private float horizontalAxis;
@@ -70,6 +71,7 @@ public class CharController : MonoBehaviour {
     {
         controller = GetComponent<CharacterController>();
         initialPos = transform.position;
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -91,6 +93,7 @@ public class CharController : MonoBehaviour {
             if (jumpTrigger && ableToJump)
             {
                 moveDirection.y = jumpSpeed;
+                anim.SetTrigger("Jump");
                 ableToJump = false;
             }
             if (!jumpTrigger)
@@ -111,14 +114,18 @@ public class CharController : MonoBehaviour {
 
         }
 
-
-
         //apply the movement to the controller
         //controller.Move(Vector3.right * moveDirection.x * dt + Vector3.up * moveDirection.y * dt + Vector3.forward * moveDirection.z * dt);
 
         moveDirection = transform.TransformDirection(moveDirection);
 
         controller.Move(moveDirection * dt);
+        anim.SetFloat("ZSpeed", vvelocityLinear);
+        anim.SetFloat("AbsZSpeed", Mathf.Abs(vvelocityLinear));
+        anim.SetFloat("YSpeed", moveDirection.y);
+        anim.SetFloat("XSpeed", hvelocityLinear);
+        anim.SetFloat("AbsXSpeed", Mathf.Abs(hvelocityLinear));
+        anim.SetBool("Grounded", controller.isGrounded);
 
         /* float vTargetRot = horizontalAxis * maxRotVel;
          float voffsetRot = vTargetRot - velocityAngular;
