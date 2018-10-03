@@ -514,12 +514,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d8e7c68dceb8b24fa0ac97c8ba9aaca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 4
   thePlayer: {fileID: 114432378350014190, guid: 9bbc86a195c55fe48a46d02c637a4f84,
     type: 2}
-  startTimeBtwShots: 10
+  startTimeBtwShots: 1
   bullet: {fileID: 1603677316681686, guid: dfcba92f6a7bb98449a550e671bf0362, type: 2}
-  firePosition: {fileID: 4609481028333680}
+  firePosition: {fileID: 1544436232983818}
 --- !u!136 &136636380611871228
 CapsuleCollider:
   m_ObjectHideFlags: 1
