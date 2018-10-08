@@ -46,3 +46,9 @@ sysinfo.txt
 #.exe
 wherePlatformsAt/.vs/wherePlatformsAt/v15/Server/sqlite3/db.lock
 wherePlatformsAt/Assets/Art.meta
+wherePlatformsAt/ProjectSettings/ProjectVersion.txt
+wherePlatformsAt/Assets/Scripts/Characters/EnemyScripts/EnemyController.cs.meta~HEAD.meta
+wherePlatformsAt/Assets/Scripts/Characters/CharController.cs.meta~HEAD.meta
+wherePlatformsAt/Assets/Scripts/Camera/CameraController.cs.meta~HEAD.meta
+wherePlatformsAt/Assets/Scripts/Camera/FirstPersonCamera.cs.meta~HEAD.meta
+wherePlatformsAt/Assets/Scripts/Characters/PlayerController.cs.meta~HEAD.meta
