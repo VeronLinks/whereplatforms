@@ -9,8 +9,8 @@ public class EnemyBulletController : MonoBehaviour {
     private Transform player;
     private Vector3 target;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         target = new Vector3(player.position.x, player.position.y, player.position.z);
 	}
