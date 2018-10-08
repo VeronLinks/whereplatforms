@@ -6,8 +6,6 @@ public class EnemyController : MonoBehaviour
 {
 
     private Rigidbody myRB;
-    public float moveSpeed;
-
     public PlayerController thePlayer;
 
     private float timeBtwShots;
@@ -23,11 +21,6 @@ public class EnemyController : MonoBehaviour
 
         timeBtwShots = startTimeBtwShots;
 	}
-	private void FixedUpdate()
-    {
-        myRB.velocity = (transform.forward * moveSpeed);
-    }
-
 	// Update is called once per frame
 	void Update ()
     {
