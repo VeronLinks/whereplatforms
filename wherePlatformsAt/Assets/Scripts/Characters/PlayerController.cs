@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Paint") //if player collides with the paint prefab
+        if (other.gameObject.tag == "Paint") //if player collides with the paint prefab
         {
             Destroy(other.gameObject);
             ammo += 5;
