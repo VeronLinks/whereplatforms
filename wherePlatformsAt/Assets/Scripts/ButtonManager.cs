@@ -20,7 +20,7 @@ public class ButtonManager : MonoBehaviour
         Application.LoadLevel(2);
     }
 
-   public  void MainMenuButton()
+   public void MainMenuButton()
     {
         Application.LoadLevel(0);
     }
