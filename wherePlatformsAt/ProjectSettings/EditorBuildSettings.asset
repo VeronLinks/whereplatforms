@@ -12,9 +12,15 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: d4b458069bc233e4dbca6223bbc31c09
   - enabled: 1
+    path: Assets/Scenes/DEMO Level.unity
+    guid: 036660bd10fe97344b9b866774f11367
+  - enabled: 0
     path: Assets/Scenes/VeronDemoScene.unity
     guid: 025cdce427526004689b0c8dabf59d82
   - enabled: 1
     path: Assets/Scenes/Controlls.unity
     guid: c990d03c4c80cac4da83a87f14a96b83
+  - enabled: 1
+    path: Assets/Scenes/Win scene.unity
+    guid: 98ea499af85a21942961f0af09eb6a21
   m_configObjects: {}
