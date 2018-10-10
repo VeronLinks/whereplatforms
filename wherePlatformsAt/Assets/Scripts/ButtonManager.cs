@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ButtonManager : MonoBehaviour
 {
-
     public void startButton()
     {
         Application.LoadLevel(1);

@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/DemoEnemies.unity
+=======
+- path: Assets/Scenes/DEMO Level.unity
+>>>>>>> 49267c51863c02a7a36f1975de42a8f658e22fde
   isLoaded: 1
   isActive: 1
