@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour {
     public GameObject bullet;
     public GameObject Paint;
     public Transform firePoint;
+    public Transform center;
+
     private bool canFire = true;
     private int ammo = 0;
 

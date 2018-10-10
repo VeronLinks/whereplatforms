@@ -5,19 +5,16 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
 
-    private Rigidbody myRB;
-    public PlayerController thePlayer;
-
-    private float timeBtwShots;
     public float startTimeBtwShots;
     public GameObject bullet;
     public GameObject firePosition;
+    public Transform thePlayer;
+    
+    private float timeBtwShots;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
-        myRB = GetComponent<Rigidbody>();
-        thePlayer = FindObjectOfType<PlayerController>();
 
         timeBtwShots = startTimeBtwShots;
 	}
@@ -25,6 +22,7 @@ public class EnemyController : MonoBehaviour
 	void Update ()
     {
         transform.LookAt(thePlayer.transform.position);
+        transform.rotation = Quaternion.Euler(0.0f, transform.eulerAngles.y, 0.0f);
 
         if(timeBtwShots <= 0)
         {
@@ -36,5 +34,4 @@ public class EnemyController : MonoBehaviour
             timeBtwShots -= Time.deltaTime;
         }
 	}
-
 }
