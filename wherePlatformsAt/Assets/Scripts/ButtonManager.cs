@@ -24,4 +24,8 @@ public class ButtonManager : MonoBehaviour
     {
         Application.LoadLevel(0);
     }
+    public void Restart()
+    {
+        Application.LoadLevel(1);
+    }
 }

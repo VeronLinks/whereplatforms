@@ -77,6 +77,7 @@
     <Compile Include="Assets\Scripts\Platform\AttachToPlatform.cs" />
     <Compile Include="Assets\Scripts\Platform\LavaFloor.cs" />
     <Compile Include="Assets\Scripts\Platform\PlatformMovement.cs" />
+    <Compile Include="Assets\Scripts\Win.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Conor/OneDrive/Documents/GitHub/whereplatforms/wherePlatformsAt/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
