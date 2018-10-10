@@ -4,20 +4,21 @@ using UnityEngine;
 
 public class enemyPatrol : MonoBehaviour {
 
-    private Rigidbody myRB;
+    public float startTime;
+    public PlayerController thePlayer;
     public float moveSpeed;
     public Transform[] movespots;
+
     private int randomSpot;
-
-    public PlayerController thePlayer;
-
+    private Rigidbody myRB;
     private float waitTime;
-    public float startTime;
+    private Animator anim;
 
     // Use this for initialization
     void Start () {
         myRB = GetComponent<Rigidbody>();
         thePlayer = FindObjectOfType<PlayerController>();
+        anim = GetComponent<Animator>();
 
         randomSpot = Random.Range(0, movespots.Length);
         waitTime = startTime;
@@ -25,7 +26,9 @@ public class enemyPatrol : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.position = Vector3.MoveTowards(transform.position, movespots[randomSpot].position, moveSpeed * Time.deltaTime);
+        float finalSpeed = moveSpeed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, movespots[randomSpot].position, finalSpeed);
+        anim.SetFloat("ZSpeed", finalSpeed);
         if (Vector3.Distance(transform.position, movespots[randomSpot].position) < 0.2f)
         {
             if (waitTime <= 0)

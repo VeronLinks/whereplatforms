@@ -4,24 +4,32 @@ using UnityEngine;
 
 public class enemyFollowWithinSpecifiedDistance : MonoBehaviour {
 
-    private Rigidbody myRB;
-    public float moveSpeed;
-    public Transform[] movespots;
-    private int randomSpot;
-
     public PlayerController thePlayer;
+    public float moveSpeed;
+
+    private int randomSpot;
+    private Animator anim;
+    private Rigidbody myRB;
 
     // Use this for initialization
     void Start () {
         myRB = GetComponent<Rigidbody>();
         thePlayer = FindObjectOfType<PlayerController>();
+        anim = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
     {
-        if (Vector3.Distance(transform.position, thePlayer.transform.position) < 15.0f)
+        float currDistance = Vector3.Distance(transform.position, thePlayer.transform.position);
+        if (currDistance < 15.0f && currDistance > 3f)
         {
             myRB.velocity = (transform.forward * moveSpeed);
+            anim.SetFloat("ZSpeed", moveSpeed);
+        }
+        else
+        {
+            myRB.velocity = Vector3.zero;
+            anim.SetFloat("ZSpeed", 0);
         }
 
     }
