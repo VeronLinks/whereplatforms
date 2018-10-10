@@ -5,7 +5,7 @@ using UnityEngine;
 public class bullet : MonoBehaviour {
 
     private Transform target;
-    private float speed1 = 10.0f;
+    private float speed1 = 14.0f;
     private Vector3 target2;
 
     // Use this for initialization

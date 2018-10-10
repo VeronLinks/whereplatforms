@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1447,6 +1447,10 @@ Prefab:
     - target: {fileID: 1029797176931350, guid: ffb8d16bc272232458dd7707559e1d14, type: 2}
       propertyPath: m_Name
       value: MovingPlatform7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4013624721337802, guid: ffb8d16bc272232458dd7707559e1d14, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 13.026339
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffb8d16bc272232458dd7707559e1d14, type: 2}
