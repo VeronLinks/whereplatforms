@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -247,9 +247,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9814f23444cf2804185c5c3ace2581e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  movespots: []
   thePlayer: {fileID: 378904509}
+  moveSpeed: 5
 --- !u!1001 &265796983
 Prefab:
   m_ObjectHideFlags: 0
@@ -561,6 +560,16 @@ Prefab:
     - target: {fileID: 4865690878748890, guid: a567ed1aa617f8346a9a77092fd9f416, type: 2}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114593315196721446, guid: a567ed1aa617f8346a9a77092fd9f416,
+        type: 2}
+      propertyPath: thePlayer
+      value: 
+      objectReference: {fileID: 378904509}
+    - target: {fileID: 54178797862777458, guid: a567ed1aa617f8346a9a77092fd9f416,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a567ed1aa617f8346a9a77092fd9f416, type: 2}
@@ -1203,31 +1212,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1152445705 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1251715558379260, guid: a567ed1aa617f8346a9a77092fd9f416,
-    type: 2}
-  m_PrefabInternal: {fileID: 454749617}
---- !u!114 &1152445706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1152445705}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 494ae68b70ed5fd4e9fc4004ff0b567b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  movespots:
-  - {fileID: 2037946900}
-  - {fileID: 875006078}
-  - {fileID: 1811923199}
-  - {fileID: 1109789124}
-  - {fileID: 1117906541}
-  thePlayer: {fileID: 378904509}
-  startTime: 3
 --- !u!1 &1288501639 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1826245312689228, guid: ffb8d16bc272232458dd7707559e1d14,
@@ -1323,31 +1307,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1613873731 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1251715558379260, guid: a567ed1aa617f8346a9a77092fd9f416,
-    type: 2}
-  m_PrefabInternal: {fileID: 2014899238}
---- !u!114 &1613873732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1613873731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 494ae68b70ed5fd4e9fc4004ff0b567b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  movespots:
-  - {fileID: 2037946900}
-  - {fileID: 875006078}
-  - {fileID: 1811923199}
-  - {fileID: 1109789124}
-  - {fileID: 1117906541}
-  thePlayer: {fileID: 378904509}
-  startTime: 3
 --- !u!1 &1719791930 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1829023066030652, guid: ffb8d16bc272232458dd7707559e1d14,
@@ -1735,6 +1694,16 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114996235738524592, guid: a567ed1aa617f8346a9a77092fd9f416,
+        type: 2}
+      propertyPath: thePlayer
+      value: 
+      objectReference: {fileID: 378904513}
+    - target: {fileID: 114593315196721446, guid: a567ed1aa617f8346a9a77092fd9f416,
+        type: 2}
+      propertyPath: thePlayer
+      value: 
+      objectReference: {fileID: 378904509}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a567ed1aa617f8346a9a77092fd9f416, type: 2}
   m_IsPrefabAsset: 0
@@ -1884,6 +1853,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114593315196721446, guid: a567ed1aa617f8346a9a77092fd9f416,
+        type: 2}
+      propertyPath: thePlayer
+      value: 
+      objectReference: {fileID: 378904509}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a567ed1aa617f8346a9a77092fd9f416, type: 2}
   m_IsPrefabAsset: 0
