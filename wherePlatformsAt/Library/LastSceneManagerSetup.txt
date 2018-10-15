@@ -1,8 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/DEMO Level.unity
-<<<<<<< HEAD
-=======
->>>>>>> 49267c51863c02a7a36f1975de42a8f658e22fde
->>>>>>> 92210f8a98342d61415c0e1306a23ba0ee6f3639
+- path: Assets/Scenes/Controlls.unity
   isLoaded: 1
   isActive: 1
