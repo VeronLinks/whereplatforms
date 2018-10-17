@@ -7,6 +7,7 @@ Packages/
 Assets/AssetStoreTools*
 Mono/
 test_Data/
+.vs/
 
 # Visual Studio 2015 cache directory
 /.vs/
@@ -74,3 +75,6 @@ wherePlatformsAt/Assets/Fonts/LuckiestGuy.meta
 wherePlatformsAt/Assets/Audio/Music.meta
 wherePlatformsAt/Assets/Audio/Mixers.meta
 wherePlatformsAt/Assets/Audio/Effects.meta
+wherePlatformsAt/.vs/wherePlatformsAt/v15/Server/sqlite3/storage.ide-wal
+wherePlatformsAt/.vs/wherePlatformsAt/v15/Server/sqlite3/storage.ide-shm
+wherePlatformsAt/.vs/wherePlatformsAt/v15/Server/sqlite3/storage.ide

@@ -4,23 +4,25 @@ using UnityEngine;
 
 public class bullet : MonoBehaviour {
 
-    private Transform target;
-    private float speed1 = 14.0f;
-    private Vector3 direction;
     public GameObject splatter;
     public int seconds;
 
+    private Transform target;
+    private float speed1 = 14.0f;
+    private Vector3 direction;
+
     // Use this for initialization
     void Start () {
-        target = GameObject.FindGameObjectWithTag("Target").transform;
-        direction = new Vector3(target.position.x, target.position.y, target.position.z);
+        //target = GameObject.FindGameObjectWithTag("Target").transform;
+        //direction = new Vector3(target.position.x, target.position.y, target.position.z);
+        direction = GameObject.FindGameObjectWithTag("Player").transform.forward;
         Destroy(gameObject, seconds);
     }
 	
 	// Update is called once per frame
 	void Update () {
 
-        transform.position = Vector3.MoveTowards(transform.position, direction, speed1 * Time.deltaTime);
+        transform.position += direction * speed1 * Time.deltaTime; //Vector3.MoveTowards(transform.position, direction, speed1 * Time.deltaTime);
     }
 
     private void OnCollisionEnter(Collision col)

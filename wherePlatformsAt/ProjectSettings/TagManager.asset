@@ -8,9 +8,13 @@ TagManager:
   - Target
   - Paint
   - Platform
+<<<<<<< HEAD
   - Level Parts
   - Bullet
   - Lava
+=======
+  - PlayerBullet
+>>>>>>> 66104beedf679245dcffaf16240cff89f56379db
   layers:
   - Default
   - TransparentFX

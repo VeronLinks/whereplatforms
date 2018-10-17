@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemyFollowWithinSpecifiedDistance : MonoBehaviour {
+public class EnemyFollowWithinSpecifiedDistance : MonoBehaviour {
 
     public PlayerController thePlayer;
     public float moveSpeed;
@@ -10,33 +10,30 @@ public class enemyFollowWithinSpecifiedDistance : MonoBehaviour {
     private int randomSpot;
     private Animator anim;
     private Rigidbody myRB;
+    private EnemyController controller;
+    private float finalSpeed;
 
     // Use this for initialization
-    void Start () {
+    void Awake () {
         myRB = GetComponent<Rigidbody>();
         thePlayer = FindObjectOfType<PlayerController>();
         anim = GetComponent<Animator>();
+        controller = GetComponent<EnemyController>();
     }
 
     private void FixedUpdate()
     {
         float currDistance = Vector3.Distance(transform.position, thePlayer.transform.position);
-        if (currDistance < 15.0f && currDistance > 3f)
+        if ((currDistance < 15.0f && currDistance > 3f) && controller.Alive)
         {
-            myRB.velocity = (transform.forward * moveSpeed);
-            anim.SetFloat("ZSpeed", moveSpeed);
+            finalSpeed = moveSpeed * Time.fixedDeltaTime;
+            anim.SetFloat("ZSpeed", finalSpeed);
         }
         else
         {
-            myRB.velocity = Vector3.zero;
-            anim.SetFloat("ZSpeed", 0);
+            finalSpeed = 0;
+            anim.SetFloat("ZSpeed", finalSpeed);
         }
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        myRB.velocity = (transform.forward * finalSpeed);
     }
 }

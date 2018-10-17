@@ -26,7 +26,11 @@ GameObject:
   - component: {fileID: 54175060911960844}
   m_Layer: 0
   m_Name: bulletPlaceholder
+<<<<<<< HEAD
   m_TagString: Bullet
+=======
+  m_TagString: PlayerBullet
+>>>>>>> 66104beedf679245dcffaf16240cff89f56379db
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,7 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   splatter: {fileID: 1267074925013010, guid: cbb321ba51e328a4f8109c09027eba34, type: 2}
-  seconds: 3
+  seconds: 5
 --- !u!135 &135014336851315654
 SphereCollider:
   m_ObjectHideFlags: 1
