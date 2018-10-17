@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemyPatrol : MonoBehaviour {
+public class EnemyPatrol : MonoBehaviour {
 
     public float startTime;
     public PlayerController thePlayer;
@@ -13,12 +13,14 @@ public class enemyPatrol : MonoBehaviour {
     private Rigidbody myRB;
     private float waitTime;
     private Animator anim;
+    private EnemyController controller;
 
     // Use this for initialization
-    void Start () {
+    void Awake () {
         myRB = GetComponent<Rigidbody>();
         thePlayer = FindObjectOfType<PlayerController>();
         anim = GetComponent<Animator>();
+        controller = GetComponent<EnemyController>();
 
         randomSpot = Random.Range(0, movespots.Length);
         waitTime = startTime;
@@ -26,19 +28,22 @@ public class enemyPatrol : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float finalSpeed = moveSpeed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, movespots[randomSpot].position, finalSpeed);
-        anim.SetFloat("ZSpeed", finalSpeed);
-        if (Vector3.Distance(transform.position, movespots[randomSpot].position) < 0.2f)
+        if (controller.Alive)
         {
-            if (waitTime <= 0)
+            float finalSpeed = moveSpeed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, movespots[randomSpot].position, finalSpeed);
+            anim.SetFloat("ZSpeed", finalSpeed);
+            if (Vector3.Distance(transform.position, movespots[randomSpot].position) < 0.2f)
             {
-                randomSpot = Random.Range(0, movespots.Length);
-                waitTime = startTime;
-            }
-            else
-            {
-                waitTime -= Time.deltaTime;
+                if (waitTime <= 0)
+                {
+                    randomSpot = Random.Range(0, movespots.Length);
+                    waitTime = startTime;
+                }
+                else
+                {
+                    waitTime -= Time.deltaTime;
+                }
             }
         }
     }
