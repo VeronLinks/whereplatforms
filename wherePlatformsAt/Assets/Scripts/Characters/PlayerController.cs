@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour {
     public GameObject Paint;
     public Transform firePoint;
     public Transform center;
+    public Transform respawn;
 
     private bool canFire = true;
     private int ammo = 0;
@@ -50,6 +51,12 @@ public class PlayerController : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
+        if(other.gameObject.tag == "enemBullet")
+        {
+            transform.position = respawn.position;
+        }
+        
+
         if (other.gameObject.tag == "Paint") //if player collides with the paint prefab
         {
             Destroy(other.gameObject);
