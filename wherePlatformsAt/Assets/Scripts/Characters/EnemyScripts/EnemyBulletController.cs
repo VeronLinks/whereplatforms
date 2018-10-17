@@ -27,7 +27,8 @@ public class EnemyBulletController : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player") || other.CompareTag("Platfrom") || other.CompareTag("movingPlatform"))
+
+        if (other.CompareTag("Player") || other.CompareTag("Platfrom") || other.CompareTag("movingPlatform"))
         {
             Destroy(gameObject);
         }
