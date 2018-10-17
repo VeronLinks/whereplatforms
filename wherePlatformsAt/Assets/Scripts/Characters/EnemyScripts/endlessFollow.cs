@@ -2,22 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class endlessFollow : MonoBehaviour
+public class EndlessFollow : MonoBehaviour
 {
-
-    private Rigidbody myRB;
+    public PlayerController thePlayer;
+    public float startTime;
     public float moveSpeed;
     public Transform[] movespots;
+
     private int randomSpot;
-
-    public PlayerController thePlayer;
-
+    private Rigidbody myRB;
     private float waitTime;
-    public float startTime;
+    private EnemyController controller;
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
+        controller = GetComponent<EnemyController>();
         myRB = GetComponent<Rigidbody>();
         thePlayer = FindObjectOfType<PlayerController>();
 
@@ -26,14 +26,13 @@ public class endlessFollow : MonoBehaviour
     }
     private void FixedUpdate()
     {
-            myRB.velocity = (transform.forward * moveSpeed);
-
+        if (controller.Alive)
+        {
+            myRB.velocity = (transform.forward * (moveSpeed * 250) * Time.fixedDeltaTime);
+        }
+        else
+        {
+            myRB.velocity = Vector3.zero;
+        }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        transform.LookAt(thePlayer.transform.position);
-    }
-
 }
