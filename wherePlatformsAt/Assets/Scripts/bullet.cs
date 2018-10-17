@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bullet : MonoBehaviour {
+public class Bullet : MonoBehaviour {
 
     public GameObject splatter;
     public int seconds;

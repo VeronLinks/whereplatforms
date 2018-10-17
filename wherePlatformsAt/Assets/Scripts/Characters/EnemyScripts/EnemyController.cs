@@ -67,5 +67,15 @@ public class EnemyController : MonoBehaviour
         anim.SetBool("Dead", true);
         skeleton.SetActive(false);
         ragdollSkeleton.SetActive(true);
+
+        /* 
+         * HAVE TO:
+         * -Redesign movement and everything in the enemy with CharacterController instead of Rigidbody.
+         * -Make a ragdoll.
+         * -Make a foreach loop in the awake of EnemyController for turning collisions to false and make kinematic all the rigidbodies of the components of the ragdoll.
+         * -Make a foreach loop in Death() for turning collisions to true and make NOT kinematic all the rigidbodies of the components of the ragdoll.
+         * -Make the animator desapear in Death().
+         * -Maybe deactivate CharacterController in Death() if any trouble with collisions (before turning on the ragdoll collisions).
+         */
     }
 }
