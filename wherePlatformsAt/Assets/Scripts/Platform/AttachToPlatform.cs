@@ -5,6 +5,7 @@ using UnityEngine;
 public class AttachToPlatform : MonoBehaviour
 {
     public GameObject Player;
+    public GameObject Enemy;
 
     void OnTriggerEnter(Collider other)
     {
@@ -13,10 +14,20 @@ public class AttachToPlatform : MonoBehaviour
             //The player has the same speed and direction as the platform
             other.transform.parent = gameObject.transform;
         }
+
+        if(other.gameObject == Enemy)
+        {
+            other.transform.parent = gameObject.transform;
+        }
     }
 
     void OnTriggerExit(Collider other)
     {
+        if (other.gameObject == Player)
+        {
+            other.transform.parent = null;
+        }
+
         if (other.gameObject == Player)
         {
             other.transform.parent = null;
