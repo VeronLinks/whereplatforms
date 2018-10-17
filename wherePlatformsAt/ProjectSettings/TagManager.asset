@@ -8,6 +8,7 @@ TagManager:
   - Target
   - Paint
   - Platform
+  - PlayerBullet
   layers:
   - Default
   - TransparentFX
