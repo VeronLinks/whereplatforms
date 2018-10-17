@@ -27,11 +27,11 @@ public class EnemyBulletController : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-
-        if (other.CompareTag("Player") || other.CompareTag("Platfrom") || other.CompareTag("movingPlatform"))
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "Platform" || other.gameObject.tag == "movingPlatform")
         {
             Destroy(gameObject);
         }
+
     }
 
 }
