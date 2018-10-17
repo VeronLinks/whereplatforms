@@ -8,6 +8,9 @@ TagManager:
   - Target
   - Paint
   - Platform
+  - Level Parts
+  - Bullet
+  - Lava
   layers:
   - Default
   - TransparentFX

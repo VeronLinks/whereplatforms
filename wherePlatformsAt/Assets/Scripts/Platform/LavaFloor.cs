@@ -9,6 +9,9 @@ public class LavaFloor : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
     {
-        player.transform.position = respawn.position;
+        if (other.gameObject.tag == "Player")
+        {
+            player.transform.position = respawn.position;
+        }
     }
 }

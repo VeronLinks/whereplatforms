@@ -32,5 +32,9 @@ public class bullet : MonoBehaviour {
             Instantiate(splatter, pos, transform.rotation);
             Destroy(this.gameObject);
         }
+        if (col.gameObject.tag == "Lava")
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
