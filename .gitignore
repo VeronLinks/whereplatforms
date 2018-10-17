@@ -7,6 +7,7 @@ Packages/
 Assets/AssetStoreTools*
 Mono/
 test_Data/
+.vs/
 
 # Visual Studio 2015 cache directory
 /.vs/
