@@ -28,7 +28,7 @@ public class AttachToPlatform : MonoBehaviour
             other.transform.parent = null;
         }
 
-        if (other.gameObject == Player)
+        if (other.gameObject == Enemy)
         {
             other.transform.parent = null;
         }
