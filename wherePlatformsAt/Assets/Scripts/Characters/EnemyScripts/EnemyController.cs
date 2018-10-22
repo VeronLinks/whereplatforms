@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-
+    public bool shoot = true;
     public float startTimeBtwShots;
     public GameObject bullet;
     public GameObject firePosition;
-    public Transform playerCenter;
     public GameObject ragdollSkeleton;
     public GameObject skeleton;
+    public Rigidbody[] ragdollRB;
 
     private float timeBtwShots;
     private Animator anim;
@@ -27,55 +27,49 @@ public class EnemyController : MonoBehaviour
         anim = GetComponent<Animator>();
         alive = true;
         timeBtwShots = startTimeBtwShots;
+        if (ragdollRB != null)
+        {
+            foreach (Rigidbody r in ragdollRB)
+            {
+                r.detectCollisions = false;
+                r.isKinematic = true;
+            }
+        }
     }
     
 	void Update ()
     {
         if (alive)
         {
-            transform.LookAt(playerCenter.transform.position);
-            transform.rotation = Quaternion.Euler(0.0f, transform.eulerAngles.y, 0.0f);
-
-            if (timeBtwShots <= 0)
+            if (shoot)
             {
-                Instantiate(bullet.transform, firePosition.transform.position, Quaternion.identity);
-                timeBtwShots = startTimeBtwShots;
+                if (timeBtwShots <= 0)
+                {
+                    Instantiate(bullet.transform, firePosition.transform.position, Quaternion.identity);
+                    timeBtwShots = startTimeBtwShots;
+                }
+                else
+                {
+                    timeBtwShots -= Time.deltaTime;
+                }
             }
-            else
-            {
-                timeBtwShots -= Time.deltaTime;
-            }
-        }
-        else
-        {
-            //ragdoll stuff
         }
 	}
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag.Equals("PlayerBullet"))
-        {
-            Death();
-            Destroy(collision.gameObject);
-        }
-    }
-
-    private void Death()
+    public void Death()
     {
         alive = false;
-        anim.SetBool("Dead", true);
-        skeleton.SetActive(false);
-        ragdollSkeleton.SetActive(true);
-
-        /* 
-         * HAVE TO:
-         * -Redesign movement and everything in the enemy with CharacterController instead of Rigidbody.
-         * -Make a ragdoll.
-         * -Make a foreach loop in the awake of EnemyController for turning collisions to false and make kinematic all the rigidbodies of the components of the ragdoll.
-         * -Make a foreach loop in Death() for turning collisions to true and make NOT kinematic all the rigidbodies of the components of the ragdoll.
-         * -Make the animator desapear in Death().
-         * -Maybe deactivate CharacterController in Death() if any trouble with collisions (before turning on the ragdoll collisions).
-         */
+        if (ragdollRB != null)
+        {
+            foreach (Rigidbody r in ragdollRB)
+            {
+                r.detectCollisions = true;
+                r.isKinematic = false;
+            }
+        }
+        Destroy(this.gameObject.GetComponent<Animator>());
+        Destroy(this.gameObject.GetComponent<CharController>());
+        Destroy(this.gameObject.GetComponent<CharacterController>());
+        Destroy(this.gameObject.GetComponent<CapsuleCollider>());
     }
 }

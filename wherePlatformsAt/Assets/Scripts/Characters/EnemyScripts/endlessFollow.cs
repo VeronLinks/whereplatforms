@@ -8,6 +8,7 @@ public class EndlessFollow : MonoBehaviour
     public float startTime;
     public float moveSpeed;
     public Transform[] movespots;
+    public Transform playerCenter;
 
     private int randomSpot;
     private Rigidbody myRB;
@@ -17,6 +18,9 @@ public class EndlessFollow : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
+        transform.LookAt(playerCenter.transform.position);
+        transform.rotation = Quaternion.Euler(0.0f, transform.eulerAngles.y, 0.0f);
+
         controller = GetComponent<EnemyController>();
         myRB = GetComponent<Rigidbody>();
         thePlayer = FindObjectOfType<PlayerController>();

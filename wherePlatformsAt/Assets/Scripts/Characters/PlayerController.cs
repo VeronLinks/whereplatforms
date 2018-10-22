@@ -18,7 +18,8 @@ public class PlayerController : MonoBehaviour {
     void Fire()
     {
         // Instantiate a bullet on the screen
-        GameObject bulletClone = Instantiate(bullet, firePoint.transform.position, firePoint.transform.rotation);
+        //GameObject bulletClone = 
+            Instantiate(bullet, firePoint.transform.position, firePoint.transform.rotation);
     }
 
     void Start()

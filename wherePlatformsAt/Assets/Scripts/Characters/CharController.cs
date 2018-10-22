@@ -50,7 +50,7 @@ public class CharController : MonoBehaviour {
     public Vector3 MoveDirection
     {
         get { return moveDirection; }
-        set { moveDirection = value; }
+        //set { moveDirection = value; }
     }
     public bool JumpTrigger
     {

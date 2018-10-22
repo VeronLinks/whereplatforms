@@ -3,37 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyFollowWithinSpecifiedDistance : MonoBehaviour {
+    
+    public float maxDist = 15.0f;
+    public float minDist = 3.0f;
 
-    public PlayerController thePlayer;
-    public float moveSpeed;
-
-    private int randomSpot;
-    private Animator anim;
-    private Rigidbody myRB;
-    private EnemyController controller;
-    private float finalSpeed;
+    private PlayerController thePlayer;
+    private EnemyController eController;
+    private CharController cController;
 
     // Use this for initialization
-    void Awake () {
-        myRB = GetComponent<Rigidbody>();
+    void Awake ()
+    {
+        cController = GetComponent<CharController>();
         thePlayer = FindObjectOfType<PlayerController>();
-        anim = GetComponent<Animator>();
-        controller = GetComponent<EnemyController>();
+        eController = GetComponent<EnemyController>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        float currDistance = Vector3.Distance(transform.position, thePlayer.transform.position);
-        if ((currDistance < 15.0f && currDistance > 3f) && controller.Alive)
+        if (eController.Alive)
         {
-            finalSpeed = moveSpeed * Time.fixedDeltaTime;
-            anim.SetFloat("ZSpeed", finalSpeed);
+            Vector3 player = thePlayer.transform.position;
+            transform.LookAt(player);
+            transform.rotation = Quaternion.Euler(0.0f, transform.eulerAngles.y, 0.0f);
+
+            float currDistance = Vector3.Distance(transform.position, player);
+            if (currDistance < maxDist && currDistance > minDist)
+            {
+                cController.VerticalAxis = 1;
+            }
+            else
+            {
+                cController.VerticalAxis = 0;
+            }
         }
-        else
-        {
-            finalSpeed = 0;
-            anim.SetFloat("ZSpeed", finalSpeed);
-        }
-        myRB.velocity = (transform.forward * finalSpeed);
     }
 }

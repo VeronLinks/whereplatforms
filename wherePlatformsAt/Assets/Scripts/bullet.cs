@@ -5,10 +5,10 @@ using UnityEngine;
 public class Bullet : MonoBehaviour {
 
     public GameObject splatter;
-    public int seconds;
+    public float seconds;
+    public float speed = 14.0f;
 
     private Transform target;
-    private float speed1 = 14.0f;
     private Vector3 direction;
 
     // Use this for initialization
@@ -20,9 +20,9 @@ public class Bullet : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
-
-        transform.position += direction * speed1 * Time.deltaTime; //Vector3.MoveTowards(transform.position, direction, speed1 * Time.deltaTime);
+	void Update ()
+    {
+        transform.position += direction * speed * Time.deltaTime; //Vector3.MoveTowards(transform.position, direction, speed1 * Time.deltaTime);
     }
 
     private void OnCollisionEnter(Collision col)
@@ -34,8 +34,13 @@ public class Bullet : MonoBehaviour {
             Instantiate(splatter, pos, transform.rotation);
             Destroy(this.gameObject);
         }
-        if (col.gameObject.tag == "Lava")
+        else if (col.gameObject.tag == "Lava")
         {
+            Destroy(this.gameObject);
+        }
+        else if (col.gameObject.tag == "Enemy")
+        {
+            col.gameObject.GetComponent<EnemyController>().Death();
             Destroy(this.gameObject);
         }
     }
