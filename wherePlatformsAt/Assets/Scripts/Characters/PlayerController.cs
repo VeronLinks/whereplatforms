@@ -19,8 +19,12 @@ public class PlayerController : MonoBehaviour {
     void Fire()
     {
         // Instantiate a bullet on the screen
+<<<<<<< HEAD
         //GameObject bulletClone = 
         Instantiate(bullet, firePoint.transform.position, firePoint.transform.rotation);
+=======
+        GameObject bulletClone = Instantiate(bullet, firePoint.transform.position, firePoint.transform.rotation);
+>>>>>>> a8a763dc3e6017c6377c087a891bf8a6b04deb74
     }
 
     void Start()
@@ -35,7 +39,7 @@ public class PlayerController : MonoBehaviour {
         playerChar.JumpTrigger = Input.GetKey(KeyCode.Space);
         //playerChar.Attacking = Input.GetButtonDown("Fire1");
 
-        if (Input.GetMouseButton(0) && ammo > 0) //fires if the mouse button is clicked and you have ammo
+        if (Input.GetMouseButton(0) && ammo > 0) //fires if the mouse button is clicked and you have ammo, 
         {
             if (canFire)
             {

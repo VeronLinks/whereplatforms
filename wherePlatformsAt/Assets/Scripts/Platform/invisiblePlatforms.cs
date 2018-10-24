@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Author: Jack
+ * this disables the mesh renderer making the platforms invisible.
+ * it enables the renderer when the player touches the platforms making them visible while the player is standing on it.
+ */
+
 public class invisiblePlatforms : MonoBehaviour {
 
     public MeshRenderer rend;
