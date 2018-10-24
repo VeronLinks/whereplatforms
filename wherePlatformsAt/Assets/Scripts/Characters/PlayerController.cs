@@ -19,12 +19,7 @@ public class PlayerController : MonoBehaviour {
 
     void Fire()
     {
-<<<<<<< HEAD
-        // Instantiate a bullet on the screen
         GameObject bulletClone = Instantiate(bullet, firePoint.transform.position, firePoint.transform.rotation);
-=======
-        Instantiate(bullet, firePoint.transform.position, firePoint.transform.rotation);
->>>>>>> 24cae5d66847aeaf125b7bf9869e240fe28cd1e2
     }
 
     void Start()
@@ -60,10 +55,6 @@ public class PlayerController : MonoBehaviour {
         {
             transform.position = respawn.position;
         }
-<<<<<<< HEAD
-=======
-        
->>>>>>> 24cae5d66847aeaf125b7bf9869e240fe28cd1e2
         if (other.gameObject.tag == "bouncyPlatform")
         {
             if (other.gameObject.name == "smallBouncyPlatform")
@@ -71,12 +62,9 @@ public class PlayerController : MonoBehaviour {
             if (other.gameObject.name == "bigBouncyPlatform")
                 playerChar.moveDirection.y = 30;
         }
-<<<<<<< HEAD
-=======
-
->>>>>>> 24cae5d66847aeaf125b7bf9869e240fe28cd1e2
         if (other.gameObject.tag == "Paint") //if player collides with the paint prefab
         {
+            
             Destroy(other.gameObject);
             ammo += 5;
             if (ammo > 25) //limits ammo to 25

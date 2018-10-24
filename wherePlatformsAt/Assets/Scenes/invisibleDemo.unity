@@ -528,8 +528,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6433d24adef171a4f805e88eee9eaadb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  respawn: {fileID: 0}
+  player: {fileID: 378904513}
+  respawn: {fileID: 1122537575}
 --- !u!65 &369416816
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1380,8 +1380,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 863817213}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -108.2, y: 93.2, z: 113.6}
-  m_LocalScale: {x: 310, y: 35, z: 2}
+  m_LocalPosition: {x: -108, y: 93.2, z: 120.5}
+  m_LocalScale: {x: 267.86646, y: 35, z: 2}
   m_Children: []
   m_Father: {fileID: 1797123402}
   m_RootOrder: 5
@@ -1465,8 +1465,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 917609142}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 198.5, y: 93.2, z: 113.6}
-  m_LocalScale: {x: 310.00018, y: 35, z: 2.000001}
+  m_LocalPosition: {x: 198.7, y: 93.2, z: 120.5}
+  m_LocalScale: {x: 267.86664, y: 35, z: 2.000001}
   m_Children: []
   m_Father: {fileID: 1797123402}
   m_RootOrder: 6

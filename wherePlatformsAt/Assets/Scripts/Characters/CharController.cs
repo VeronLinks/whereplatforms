@@ -21,17 +21,13 @@ public class CharController : MonoBehaviour {
     public float jumpSpeed = 8.0f;
     public float jumpingSecondsSet = 1.0f;
     public float gravity = -9.8f;
-    public Vector3 moveDirection = Vector3.zero; // previously private, need use in playerController for bouncyPlatforms
     #endregion
 
     #region Private Attributes
     private float vvelocityLinear = 0.0f;
     private float hvelocityLinear = 0.0f;
-<<<<<<< HEAD
     //private float velocityAngular = 0.0f;
-=======
-    private Vector3 moveDirection = Vector3.zero;
->>>>>>> 24cae5d66847aeaf125b7bf9869e240fe28cd1e2
+    public Vector3 moveDirection = Vector3.zero;
     private CharacterController controller;
     private float jumpingCount = 0;
     private bool ableToJump = true;

@@ -58,7 +58,6 @@
      <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
      <Compile Include="Assets\Scripts\Camera\FirstPersonCamera.cs" />
      <Compile Include="Assets\Scripts\Characters\CharController.cs" />
-     <Compile Include="Assets\Scripts\Characters\EnemyScripts\endlessFollow.cs" />
      <Compile Include="Assets\Scripts\Characters\EnemyScripts\EnemyBulletController.cs" />
      <Compile Include="Assets\Scripts\Characters\EnemyScripts\EnemyController.cs" />
      <Compile Include="Assets\Scripts\Characters\EnemyScripts\enemyFollowWithinSpecifiedDistance.cs" />
