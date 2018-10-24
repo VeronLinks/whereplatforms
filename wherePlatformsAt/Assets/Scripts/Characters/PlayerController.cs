@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour {
 
     public GameObject bullet;
@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour {
 
     private bool canFire = true;
     private int ammo = 0;
+    private int lives = 3;
 
     private CharController playerChar;
 
@@ -19,7 +20,7 @@ public class PlayerController : MonoBehaviour {
     {
         // Instantiate a bullet on the screen
         //GameObject bulletClone = 
-            Instantiate(bullet, firePoint.transform.position, firePoint.transform.rotation);
+        Instantiate(bullet, firePoint.transform.position, firePoint.transform.rotation);
     }
 
     void Start()
@@ -40,9 +41,13 @@ public class PlayerController : MonoBehaviour {
             {
                 canFire = false;
                 Fire();
-                ammo--; 
+                ammo--;
             }
         }
+        /*if (lives == 2)
+        {
+            SceneManager.LoadScene("lose");
+        }*/
 
         if (Input.GetMouseButtonUp(0))
         {
@@ -52,25 +57,28 @@ public class PlayerController : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "enemBullet")
+        if (other.gameObject.tag == "enemBullet")
         {
             transform.position = respawn.position;
         }
-        
+
 
         if (other.gameObject.tag == "Paint") //if player collides with the paint prefab
         {
             Destroy(other.gameObject);
             ammo += 5;
-            if(ammo > 25) //limits ammo to 25
+            if (ammo > 25) //limits ammo to 25
             {
                 ammo = 25;
             }
         }
     }
+    
+
 
     void OnGUI() //prints ammo out to the screen
     {
         GUI.Box(new Rect(10, 10, 100, 30), "Ammo: " + ammo);
+        //GUI.Box(new Rect(10, 40, 100, 30), "Lives: " + lives);
     }
 }

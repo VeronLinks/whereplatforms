@@ -15,18 +15,20 @@ public class Lives : MonoBehaviour {
 	}
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Ground(Lava)")
+        if (other.gameObject.tag == "Lava")
         {
             lives--;
         }
-
+        if (lives < 1)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            Application.LoadLevel(4);
+        }
     }
     public void death()
     {
-        if (lives < 2)
-        {
-            SceneManager.LoadScene("lose");
-        }
+        
     }
 private void OnGUI()
     {
