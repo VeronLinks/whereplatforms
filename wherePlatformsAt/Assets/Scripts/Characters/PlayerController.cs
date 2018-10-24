@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour {
 
     void Fire()
     {
-        Instantiate(bullet, firePoint.transform.position, firePoint.transform.rotation);
+        GameObject bulletClone = Instantiate(bullet, firePoint.transform.position, firePoint.transform.rotation);
     }
 
     void Start()
@@ -55,15 +55,16 @@ public class PlayerController : MonoBehaviour {
         {
             transform.position = respawn.position;
         }
-        
         if (other.gameObject.tag == "bouncyPlatform")
         {
-            playerChar.jumpSpeed += 1 / 4;
-            playerChar.JumpTrigger = true;
+            if (other.gameObject.name == "smallBouncyPlatform")
+                playerChar.moveDirection.y = 15;
+            if (other.gameObject.name == "bigBouncyPlatform")
+                playerChar.moveDirection.y = 30;
         }
-
         if (other.gameObject.tag == "Paint") //if player collides with the paint prefab
         {
+            
             Destroy(other.gameObject);
             ammo += 5;
             if (ammo > 25) //limits ammo to 25

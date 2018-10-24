@@ -12,6 +12,7 @@ TagManager:
   - movingPlatform
   - PlayerBullet
   - Enemy
+  - bouncyPlatform
   layers:
   - Default
   - TransparentFX

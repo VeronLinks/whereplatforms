@@ -26,7 +26,8 @@ public class CharController : MonoBehaviour {
     #region Private Attributes
     private float vvelocityLinear = 0.0f;
     private float hvelocityLinear = 0.0f;
-    private Vector3 moveDirection = Vector3.zero;
+    //private float velocityAngular = 0.0f;
+    public Vector3 moveDirection = Vector3.zero;
     private CharacterController controller;
     private float jumpingCount = 0;
     private bool ableToJump = true;
