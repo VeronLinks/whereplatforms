@@ -55,7 +55,12 @@ public class PlayerController : MonoBehaviour {
         {
             transform.position = respawn.position;
         }
-        
+
+        if (other.gameObject.tag == "bouncyPlatform")
+        {
+            playerChar.jumpSpeed += 1 / 4;
+            playerChar.JumpTrigger = true;
+        }
 
         if (other.gameObject.tag == "Paint") //if player collides with the paint prefab
         {

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/DEMO Level.unity
+- path: Assets/Scenes/invisibleDemo.unity
   isLoaded: 1
   isActive: 1
