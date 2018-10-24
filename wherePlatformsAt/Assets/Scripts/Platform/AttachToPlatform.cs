@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Author: Jack
+ * Allows the player to move with the platform by 
+ * giving it the same speed and direction as the moving platform
+ */
+
 public class AttachToPlatform : MonoBehaviour
 {
     public GameObject Player;
-    public GameObject Enemy;
 
     void OnTriggerStay(Collider other)
     {
@@ -15,10 +19,15 @@ public class AttachToPlatform : MonoBehaviour
             other.transform.parent  = gameObject.transform;
         }
 
-        if(other.gameObject == Enemy)
+        if(other.gameObject.tag == "Enemy")
         {
-            other.transform.parent = gameObject.transform;
+            other.transform.parent = transform;
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        
     }
 
     void OnTriggerExit(Collider other)
@@ -28,7 +37,7 @@ public class AttachToPlatform : MonoBehaviour
             other.transform.parent = null;
         }
 
-        if (other.gameObject == Enemy)
+        if (other.gameObject.tag == "Enemy")
         {
             other.transform.parent = null;
         }

@@ -6,12 +6,14 @@ public class LavaFloor : MonoBehaviour {
 
     public Transform player;
     public Transform respawn;
+    PlayerController lives;
 
 	void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
             player.transform.position = respawn.position;
+            
         }
     }
 }
