@@ -21,7 +21,6 @@ public class EnemyController : MonoBehaviour
 
     private PlayerController thePlayer;
     private float timeBtwShots;
-    private Animator anim;
     private float distToHitPlayer;
     // Bit shift the index of the layer to get a bit mask
     int layerMask;
@@ -37,7 +36,6 @@ public class EnemyController : MonoBehaviour
     private void Awake()
     {
         thePlayer = FindObjectOfType<PlayerController>();
-        anim = GetComponent<Animator>();
         alive = true;
         timeBtwShots = startTimeBtwShots;
         if (ragdollRB != null)

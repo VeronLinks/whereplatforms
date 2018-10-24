@@ -21,9 +21,6 @@ public class FirstPersonCamera : MonoBehaviour {
     #region Private Attributes
     private Vector2 mouseLook;
     private Vector2 smoothV;
-    private float prevX;
-    private CharController charCont;
-    private CameraController cameraCont;
     #endregion
 
     #region Properties
@@ -34,8 +31,6 @@ public class FirstPersonCamera : MonoBehaviour {
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        charCont = character.GetComponent<CharController>();
-        cameraCont = GetComponent<CameraController>();
     }
 
     void Update()
