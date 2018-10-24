@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Author: Jack
+ * this uses an array of waypoints as targets and makes the platforms move towards these targets.
+ */
+
 public class PlatformMovement : MonoBehaviour {
 
     public float speed = 1.0f;

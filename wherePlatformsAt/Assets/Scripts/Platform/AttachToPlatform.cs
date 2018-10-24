@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Author: Jack
+ * Allows the player to move with the platform by 
+ * giving it the same speed and direction as the moving platform
+ */
+
 public class AttachToPlatform : MonoBehaviour
 {
     public GameObject Player;
