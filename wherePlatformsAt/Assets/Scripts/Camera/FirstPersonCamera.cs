@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Author: Javier Verón
+ * 
+ * This camera works for both first person and third person, but in this last one it also needs the CameraController, 
+ * which it doesn't for first person.
+ */
+
 public class FirstPersonCamera : MonoBehaviour {
 
     #region Public Attributes

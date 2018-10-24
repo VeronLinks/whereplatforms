@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 public class PlayerController : MonoBehaviour {
 
     public GameObject bullet;
@@ -18,13 +19,7 @@ public class PlayerController : MonoBehaviour {
 
     void Fire()
     {
-        // Instantiate a bullet on the screen
-<<<<<<< HEAD
-        //GameObject bulletClone = 
         Instantiate(bullet, firePoint.transform.position, firePoint.transform.rotation);
-=======
-        GameObject bulletClone = Instantiate(bullet, firePoint.transform.position, firePoint.transform.rotation);
->>>>>>> a8a763dc3e6017c6377c087a891bf8a6b04deb74
     }
 
     void Start()
@@ -37,7 +32,6 @@ public class PlayerController : MonoBehaviour {
         playerChar.VerticalAxis = Input.GetAxisRaw("Vertical");
         playerChar.HorizontalAxis = Input.GetAxisRaw("Horizontal");
         playerChar.JumpTrigger = Input.GetKey(KeyCode.Space);
-        //playerChar.Attacking = Input.GetButtonDown("Fire1");
 
         if (Input.GetMouseButton(0) && ammo > 0) //fires if the mouse button is clicked and you have ammo, 
         {
@@ -48,10 +42,6 @@ public class PlayerController : MonoBehaviour {
                 ammo--;
             }
         }
-        /*if (lives == 2)
-        {
-            SceneManager.LoadScene("lose");
-        }*/
 
         if (Input.GetMouseButtonUp(0))
         {
@@ -77,8 +67,6 @@ public class PlayerController : MonoBehaviour {
             }
         }
     }
-    
-
 
     void OnGUI() //prints ammo out to the screen
     {

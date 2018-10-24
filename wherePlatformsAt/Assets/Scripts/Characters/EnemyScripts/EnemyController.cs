@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ *  Author: Javier Verón
+ *  
+ *  Makes the enemy shoot the player (which can be disabled from the editor turning to false "shoot").
+ *  Makes the enemy die if Death() is called from anywhere. This enables the ragdoll and destroys everything in the corpse that may cause troubles to the ragdoll.
+ */
+
 public class EnemyController : MonoBehaviour
 {
     public bool shoot = true;
@@ -16,7 +23,6 @@ public class EnemyController : MonoBehaviour
     private float timeBtwShots;
     private Animator anim;
     private float distToHitPlayer;
-    private bool hittingPlayer = true;
     // Bit shift the index of the layer to get a bit mask
     int layerMask;
 
@@ -60,12 +66,15 @@ public class EnemyController : MonoBehaviour
                 Vector3 firePos = firePosition.transform.position;
                 Vector3 dir = (thePlayer.gameObject.transform.position + new Vector3(0.0f, 1.19f, 0.0f)) - firePos;
                 RaycastHit hit;
-                if (hittingPlayer = Physics.Raycast(firePos, dir, out hit, distToHitPlayer, 1 << 8) && !Physics.Raycast(firePos, dir, out hit, distToHitPlayer, layerMask))
+                if (Physics.Raycast(firePos, dir, out hit, distToHitPlayer, 1 << 8))
                 {
-                    if (timeBtwShots <= 0)
+                    if (!Physics.Raycast(firePos, dir, hit.distance, layerMask))
                     {
-                        Instantiate(bullet.transform, firePos, Quaternion.identity);
-                        timeBtwShots = startTimeBtwShots;
+                        if (timeBtwShots <= 0)
+                        {
+                            Instantiate(bullet.transform, firePos, Quaternion.identity);
+                            timeBtwShots = startTimeBtwShots;
+                        }
                     }
                 }
                 timeBtwShots -= Time.deltaTime;

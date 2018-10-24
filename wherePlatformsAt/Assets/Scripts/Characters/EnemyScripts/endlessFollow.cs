@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ *  Note from Javier: I haven't edited this code to work with the CharController because we already have EnemyFollowWithinSpecifiedDistance, 
+ *  so this code is useless from my point of view.
+ */
+
 public class EndlessFollow : MonoBehaviour
 {
     public PlayerController thePlayer;

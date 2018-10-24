@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Authors: Cian Lennon & Javier Verón
+ * 
+ * Makes the enemy follow the player within the specified distance which will be calculated for X and Z axis. 
+ * The movement inputs are set for CharController.
+ */
+
 public class EnemyFollowWithinSpecifiedDistance : MonoBehaviour {
     
     public float maxDist = 15.0f;
