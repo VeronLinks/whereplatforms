@@ -30,14 +30,17 @@ public class bullet : MonoBehaviour {
 
     private void OnCollisionEnter(Collision col)
     {
-        Vector3 pos = transform.position;
-        pos.y += 0.1f;
+        ContactPoint contact = col.contacts[0];
+        Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
+        Vector3 pos = contact.point;
+
+        pos.y += 0.001f;
 
         /*instantiates the splatter prefab and destroys the bullet when it collides with the platforms
          */
         if (col.gameObject.tag == "Platform")
         {
-            Instantiate(splatter, pos, transform.rotation);
+            Instantiate(splatter, pos, rot);
             Destroy(this.gameObject);
         }
         /*destroys the bullet when it collides with the lava
