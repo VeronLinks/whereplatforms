@@ -1,8 +1,0 @@
-sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/invisibleDemo.unity
-=======
-- path: Assets/Scenes/VeronDemoScene.unity
->>>>>>> 3c97e3af86b69e600050b56a055d3646661ce827
-  isLoaded: 1
-  isActive: 1
