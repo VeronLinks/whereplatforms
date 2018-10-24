@@ -21,11 +21,11 @@ GameObject:
   - component: {fileID: 4464032594534880}
   - component: {fileID: 33951776328653354}
   - component: {fileID: 23309252503723940}
-  - component: {fileID: 136096373582627740}
   - component: {fileID: 114546281486269192}
   - component: {fileID: 136973461995031342}
+  - component: {fileID: 65758004007550918}
   m_Layer: 0
-  m_Name: enemy bullet
+  m_Name: EnemyBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,6 +86,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1603677316681686}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &65758004007550918
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1603677316681686}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.9, y: 1.8, z: 0.9}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114546281486269192
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -98,19 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
---- !u!136 &136096373582627740
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1603677316681686}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  seconds: 3
 --- !u!136 &136973461995031342
 CapsuleCollider:
   m_ObjectHideFlags: 1

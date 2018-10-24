@@ -18,6 +18,7 @@ public class EnemyBulletController : MonoBehaviour {
         target = new Vector3(player.position.x, player.position.y, player.position.z);
         Destroy(gameObject, seconds);
         initialPosition = transform.position;
+        Invoke("ActiveCollider", 0.1f);
     }
 	
 	void Update () {
@@ -33,5 +34,9 @@ public class EnemyBulletController : MonoBehaviour {
         }
 
     }
-
+    
+    private void ActiveCollider()
+    {
+        GetComponent<BoxCollider>().enabled = true;
+    }
 }
