@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
     public void startButton()
     {
-        Application.LoadLevel(1);
+        SceneManager.LoadScene(1);
     }
 
     public void quitButton()
@@ -16,15 +17,15 @@ public class ButtonManager : MonoBehaviour
 
     public void controllsScreen()
     {
-        Application.LoadLevel(2);
+        SceneManager.LoadScene(2);
     }
 
    public void MainMenuButton()
     {
-        Application.LoadLevel(0);
+        SceneManager.LoadScene(0);
     }
     public void Restart()
     {
-        Application.LoadLevel(1);
+        SceneManager.LoadScene(1);
     }
 }

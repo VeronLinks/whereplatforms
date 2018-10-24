@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 public class Lives : MonoBehaviour {
     private int lives = 3;
 	// Use this for initialization
@@ -23,7 +24,7 @@ public class Lives : MonoBehaviour {
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            Application.LoadLevel(4);
+            SceneManager.LoadScene(4);
         }
     }
     public void death()

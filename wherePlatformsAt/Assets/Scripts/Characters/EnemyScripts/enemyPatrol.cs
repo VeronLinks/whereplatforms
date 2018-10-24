@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Authors: Cian Lennon & Javier Verón
+ * 
+ * Makes the enemy go to the waypoints introduced in the editor (movespots). 
+ * The movement inputs are set for CharController.
+ */
+
 public class EnemyPatrol : MonoBehaviour {
   
     public Transform[] movespots;

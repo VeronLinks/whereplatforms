@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 public class PlayerController : MonoBehaviour {
 
     public GameObject bullet;
@@ -18,8 +19,12 @@ public class PlayerController : MonoBehaviour {
 
     void Fire()
     {
+<<<<<<< HEAD
         // Instantiate a bullet on the screen
         GameObject bulletClone = Instantiate(bullet, firePoint.transform.position, firePoint.transform.rotation);
+=======
+        Instantiate(bullet, firePoint.transform.position, firePoint.transform.rotation);
+>>>>>>> 24cae5d66847aeaf125b7bf9869e240fe28cd1e2
     }
 
     void Start()
@@ -32,7 +37,6 @@ public class PlayerController : MonoBehaviour {
         playerChar.VerticalAxis = Input.GetAxisRaw("Vertical");
         playerChar.HorizontalAxis = Input.GetAxisRaw("Horizontal");
         playerChar.JumpTrigger = Input.GetKey(KeyCode.Space);
-        //playerChar.Attacking = Input.GetButtonDown("Fire1");
 
         if (Input.GetMouseButton(0) && ammo > 0) //fires if the mouse button is clicked and you have ammo, 
         {
@@ -43,10 +47,6 @@ public class PlayerController : MonoBehaviour {
                 ammo--;
             }
         }
-        /*if (lives == 2)
-        {
-            SceneManager.LoadScene("lose");
-        }*/
 
         if (Input.GetMouseButtonUp(0))
         {
@@ -60,6 +60,10 @@ public class PlayerController : MonoBehaviour {
         {
             transform.position = respawn.position;
         }
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 24cae5d66847aeaf125b7bf9869e240fe28cd1e2
         if (other.gameObject.tag == "bouncyPlatform")
         {
             if (other.gameObject.name == "smallBouncyPlatform")
@@ -67,6 +71,10 @@ public class PlayerController : MonoBehaviour {
             if (other.gameObject.name == "bigBouncyPlatform")
                 playerChar.moveDirection.y = 30;
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 24cae5d66847aeaf125b7bf9869e240fe28cd1e2
         if (other.gameObject.tag == "Paint") //if player collides with the paint prefab
         {
             Destroy(other.gameObject);
@@ -77,8 +85,6 @@ public class PlayerController : MonoBehaviour {
             }
         }
     }
-    
-
 
     void OnGUI() //prints ammo out to the screen
     {
