@@ -29,7 +29,7 @@ public class EnemyPatrol : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (eController.Alive)
+        if (eController.Alive && movespots.Length > 0)
         {
             cController.VerticalAxis = 1.0f;
             transform.LookAt(movespots[randomSpot].position);
