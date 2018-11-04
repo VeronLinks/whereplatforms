@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\Lives.cs" />
     <Compile Include="Assets\Scripts\Lose.cs" />
     <Compile Include="Assets\Scripts\Platform\AttachToPlatform.cs" />
+    <Compile Include="Assets\Scripts\Platform\contactDisappearing.cs" />
     <Compile Include="Assets\Scripts\Platform\disappearing.cs" />
     <Compile Include="Assets\Scripts\Platform\invisiblePlatforms.cs" />
     <Compile Include="Assets\Scripts\Platform\LavaFloor.cs" />

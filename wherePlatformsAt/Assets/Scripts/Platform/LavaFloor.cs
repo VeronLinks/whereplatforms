@@ -12,6 +12,7 @@ public class LavaFloor : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
+            Debug.Log("Respawning");
             player.transform.position = respawn.position;
             
         }
