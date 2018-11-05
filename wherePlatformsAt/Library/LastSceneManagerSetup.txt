@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/DemoEnemies.unity
+=======
+- path: Assets/Scenes/ContactDisappearingDemo.unity
+>>>>>>> 634afa93a436cbcedda658c5fa4d61614b2b6694
   isLoaded: 1
   isActive: 1
