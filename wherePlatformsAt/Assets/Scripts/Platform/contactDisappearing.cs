@@ -27,14 +27,14 @@ public class contactDisappearing : MonoBehaviour {
     {
 
         //decrease timer
-        if(timer <= waitTime)
+        if(timer < waitTime +1)
         {
             Debug.Log("Timer counting down");
             timer -= Time.deltaTime;
         }
         
         //disable platform when timer reaches 0
-        if (timer == 0)
+        if (timer <= 0)
         {
             rend.enabled = false;//enable or disable renderer
             p_col.enabled = false;//enable or disable collider
@@ -42,10 +42,12 @@ public class contactDisappearing : MonoBehaviour {
           
         }
 
+        Debug.Log(timer);
+
     }
 
     //start countdown timer upon player landing on platform 
-    private void OnCollisionEnter(Collision col)
+    private void OnTriggerEnter(Collider col)
     {
         Debug.Log("On Platform");
         if (col.gameObject.tag == "Player")
@@ -57,7 +59,7 @@ public class contactDisappearing : MonoBehaviour {
     }
 
     //Reset timer and reactivate platform upon leaving 
-    private void OnCollisionExit(Collision col)
+    private void OnTriggerExit(Collider col)
     {
         if (col.gameObject.tag == "Player")
         {

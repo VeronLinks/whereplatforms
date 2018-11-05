@@ -24,6 +24,7 @@ public class invisiblePlatforms : MonoBehaviour {
     {
         if (col.gameObject.tag == "Player")
         {
+            Debug.Log("Player on platform");
             rend.enabled = true;
         }
     }
@@ -32,6 +33,7 @@ public class invisiblePlatforms : MonoBehaviour {
     {
         if (col.gameObject.tag == "Player")
         {
+            Debug.Log("Player left platform");
             rend.enabled = false;
         }
     }
