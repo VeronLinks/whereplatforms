@@ -20,9 +20,7 @@ public class contactDisappearing : MonoBehaviour {
         p_col = GetComponent<Collider>();//get the platform collider
         mat = GetComponent<Renderer>().material;
 
-        rend.enabled = true;
-        p_col.enabled = true;
-        mat.color = Color.green;
+        Reset();
     }
 
     // Update is called once per frame
@@ -81,8 +79,13 @@ public class contactDisappearing : MonoBehaviour {
         if (col.gameObject.tag == "Player")
         {
             timer = waitTime + 1;
+            Reset();
         }
+    }
 
+
+    private void Reset()
+    {
         rend.enabled = true;
         p_col.enabled = true;
         mat.color = Color.green;
