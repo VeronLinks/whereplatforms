@@ -24,30 +24,46 @@ public class InvisiblePlatformPattern : MonoBehaviour {
             platformArray[i].GetComponent<Collider>().enabled = false;
         }
 
-        StartCoroutine(Run());
+        StartCoroutine(switchPlatform());
     }
 	
 	// Update is called once per frame
 	void Update () {}
 
-    IEnumerator Run()
+    IEnumerator Run(int index)
     {
-        while(true)
+        platformArray[index].GetComponent<MeshRenderer>().enabled = true;
+        platformArray[index].GetComponent<Collider>().enabled = true;
+        yield return new WaitForSecondsRealtime(8);
+        platformArray[index].GetComponent<MeshRenderer>().enabled = false;
+        platformArray[index].GetComponent<Collider>().enabled = false;
+    }
+
+    IEnumerator Run2(int index)
+    {
+        platformArray[index].GetComponent<MeshRenderer>().enabled = true;
+        platformArray[index].GetComponent<Collider>().enabled = true;
+        yield return new WaitForSecondsRealtime(8);
+        platformArray[index].GetComponent<MeshRenderer>().enabled = false;
+        platformArray[index].GetComponent<Collider>().enabled = false;
+    }
+
+    IEnumerator switchPlatform()
+    {
+        while (true)
         {
             for (int i = arrayIndex; i < platformArray.Length; i++)
             {
+                StartCoroutine(Run(arrayIndex));
                 yield return new WaitForSecondsRealtime(5);
-                platformArray[i].GetComponent<MeshRenderer>().enabled = true;
-                platformArray[i].GetComponent<Collider>().enabled = true;
-                yield return new WaitForSecondsRealtime(5);
-                platformArray[i].GetComponent<MeshRenderer>().enabled = false;
-                platformArray[i].GetComponent<Collider>().enabled = false;
+                arrayIndex++;
+                if (arrayIndex == platformArray.Length)
+                {
+                    arrayIndex = 0;
+                }
+                StartCoroutine(Run2(arrayIndex));
             }
-            if (arrayIndex == platformArray.Length)
-            {
-                arrayIndex = 0;
-            }
-        } 
+        }
     }
 
 
