@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /* Author: Jack
- * this disables the mesh renderer making the platforms invisible.
+ * this disables the mesh renderer and collider for all platforms making the platforms invisible and the player falls through them.
  * has an array of platforms, makes 1 visible at a time.
  */
 
@@ -18,43 +18,36 @@ public class InvisiblePlatformPattern : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-        for (int i = 0; i < platformArray.Length; i++)
+        for (int i = 0; i < platformArray.Length; i++) //makes all the platforms invisisible
         {
             platformArray[i].GetComponent<MeshRenderer>().enabled = false;
             platformArray[i].GetComponent<Collider>().enabled = false;
         }
+
+        StartCoroutine(Run());
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () {}
 
-        for (int i = arrayIndex; i < platformArray.Length; i++)
+    IEnumerator Run()
+    {
+        while(true)
         {
-            bool active = true;
-            if (activeCheck % 2 == 0)
+            for (int i = arrayIndex; i < platformArray.Length; i++)
             {
-                active = true;
+                yield return new WaitForSecondsRealtime(5);
+                platformArray[i].GetComponent<MeshRenderer>().enabled = true;
+                platformArray[i].GetComponent<Collider>().enabled = true;
+                yield return new WaitForSecondsRealtime(5);
+                platformArray[i].GetComponent<MeshRenderer>().enabled = false;
+                platformArray[i].GetComponent<Collider>().enabled = false;
             }
-            else
+            if (arrayIndex == platformArray.Length)
             {
-                active = false;
+                arrayIndex = 0;
             }
-
-            timer += Time.deltaTime;
-            if (timer > waitTime)
-            {
-                platformArray[i].GetComponent<MeshRenderer>().enabled = active;
-                platformArray[i].GetComponent<Collider>().enabled = active;
-                timer = 0; //reset timer
-                activeCheck++;
-            }
-        }
-
-
-        if (arrayIndex == platformArray.Length)
-        {
-            arrayIndex = 0;
-        }
+        } 
     }
 
 
