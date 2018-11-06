@@ -10,10 +10,8 @@ using UnityEngine;
 public class InvisiblePlatformPattern : MonoBehaviour {
 
     public GameObject[] platformArray;
-    public int arrayIndex = 0;
-    public float waitTime = 0;
-    float timer;
-    int activeCheck = 1;
+    public int timeToSpawn;
+    public int timeVisible;
 
     // Use this for initialization
     void Start () {
@@ -30,20 +28,11 @@ public class InvisiblePlatformPattern : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {}
 
-    IEnumerator Run(int index)
+    IEnumerator Run(int index) //makes platform visible, waits then makes invisible
     {
         platformArray[index].GetComponent<MeshRenderer>().enabled = true;
         platformArray[index].GetComponent<Collider>().enabled = true;
-        yield return new WaitForSecondsRealtime(8);
-        platformArray[index].GetComponent<MeshRenderer>().enabled = false;
-        platformArray[index].GetComponent<Collider>().enabled = false;
-    }
-
-    IEnumerator Run2(int index)
-    {
-        platformArray[index].GetComponent<MeshRenderer>().enabled = true;
-        platformArray[index].GetComponent<Collider>().enabled = true;
-        yield return new WaitForSecondsRealtime(8);
+        yield return new WaitForSecondsRealtime(timeVisible);
         platformArray[index].GetComponent<MeshRenderer>().enabled = false;
         platformArray[index].GetComponent<Collider>().enabled = false;
     }
@@ -52,16 +41,14 @@ public class InvisiblePlatformPattern : MonoBehaviour {
     {
         while (true)
         {
-            for (int i = arrayIndex; i < platformArray.Length; i++)
+            for (int i = 0; i < platformArray.Length; i++) //goes through platform array.
             {
-                StartCoroutine(Run(arrayIndex));
-                yield return new WaitForSecondsRealtime(5);
-                arrayIndex++;
-                if (arrayIndex == platformArray.Length)
+                StartCoroutine(Run(i)); //makes platform visible
+                yield return new WaitForSecondsRealtime(timeToSpawn); 
+                if (i == platformArray.Length)
                 {
-                    arrayIndex = 0;
+                    i = 0;
                 }
-                StartCoroutine(Run2(arrayIndex));
             }
         }
     }
