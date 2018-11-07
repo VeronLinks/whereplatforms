@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\Characters\EnemyScripts\EnemyController.cs" />
      <Compile Include="Assets\Scripts\Characters\EnemyScripts\enemyFollowWithinSpecifiedDistance.cs" />
      <Compile Include="Assets\Scripts\Characters\EnemyScripts\enemyPatrol.cs" />
+     <Compile Include="Assets\Scripts\Characters\EnemyScripts\PathFinder.cs" />
      <Compile Include="Assets\Scripts\Characters\PlayerController.cs" />
      <Compile Include="Assets\Scripts\LavaBall\LavaBalls.cs" />
      <Compile Include="Assets\Scripts\LavaBall\LavaBallSpawner.cs" />
@@ -79,6 +80,7 @@
      <Compile Include="Assets\Scripts\Platform\LavaFloor.cs" />
      <Compile Include="Assets\Scripts\Platform\PlatformMovement.cs" />
      <Compile Include="Assets\Scripts\SplatterController.cs" />
+     <Compile Include="Assets\Scripts\TimeLimit.cs" />
      <Compile Include="Assets\Scripts\Win.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>C:/Users/Jack/Documents/GitHub/whereplatforms/wherePlatformsAt/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
