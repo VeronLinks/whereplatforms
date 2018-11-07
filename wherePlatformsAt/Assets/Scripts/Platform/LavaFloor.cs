@@ -21,5 +21,10 @@ public class LavaFloor : MonoBehaviour {
             Destroy(other.gameObject);
 
         }
+        if (other.gameObject.tag == "falling")
+        {
+            Destroy(other.gameObject);
+
+        }
     }
 }
