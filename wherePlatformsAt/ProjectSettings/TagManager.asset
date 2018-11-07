@@ -12,7 +12,10 @@ TagManager:
   - movingPlatform
   - PlayerBullet
   - Enemy
-  - bouncyPlatform
+  - bouncyB
+  - bouncyS
+  - enemBullet
+  - lavaBall
   layers:
   - Default
   - TransparentFX

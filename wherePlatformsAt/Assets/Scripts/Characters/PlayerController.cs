@@ -55,12 +55,13 @@ public class PlayerController : MonoBehaviour {
         {
             transform.position = respawn.position;
         }
-        if (other.gameObject.tag == "bouncyPlatform")
+        if (other.gameObject.tag == "bouncyS")
         {
-            if (other.gameObject.name == "smallBouncyPlatform")
-                playerChar.moveDirection.y = 15;
-            if (other.gameObject.name == "bigBouncyPlatform")
-                playerChar.moveDirection.y = 30;
+            playerChar.moveDirection.y = 15;
+        }
+        if (other.gameObject.tag == "bouncyB")
+        {
+            playerChar.moveDirection.y = 30;
         }
         if (other.gameObject.tag == "Paint") //if player collides with the paint prefab
         {

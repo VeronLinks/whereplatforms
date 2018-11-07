@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 65241305135262886}
   m_Layer: 0
   m_Name: bigBouncyPlatform
-  m_TagString: bouncyPlatform
+  m_TagString: bouncyB
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

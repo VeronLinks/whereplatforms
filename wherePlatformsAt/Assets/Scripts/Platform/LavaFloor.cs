@@ -16,5 +16,10 @@ public class LavaFloor : MonoBehaviour {
             player.transform.position = respawn.position;
             
         }
+        if (other.gameObject.name == "LavaBall(Clone)")
+        {
+            Destroy(other.gameObject);
+
+        }
     }
 }

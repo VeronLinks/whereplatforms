@@ -9,6 +9,7 @@ public class contactDisappearing : MonoBehaviour {
 
     public Renderer rend;
     Collider p_col;
+    Material mat;
 
     // Use this for initialization
     void Start()
@@ -17,14 +18,28 @@ public class contactDisappearing : MonoBehaviour {
 
         rend = GetComponent<Renderer>();//get the platform renderer
         p_col = GetComponent<Collider>();//get the platform collider
+        mat = GetComponent<Renderer>().material;
 
-        rend.enabled = true;
-        p_col.enabled = true;
+        Reset();
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Checking for range to change colour
+        float third = waitTime / 3;
+        float twoThirds = third * 2;
+
+        if(timer <= twoThirds && timer > third)
+        {
+            //set colour to yellow
+            mat.color = Color.yellow;
+        }
+        else if(timer <= third)
+        {
+            //set colour to red
+            mat.color = Color.red;
+        }
 
         //decrease timer
         if(timer < waitTime +1)
@@ -58,15 +73,21 @@ public class contactDisappearing : MonoBehaviour {
             
     }
 
-    //Reset timer and reactivate platform upon leaving 
+    //Reset timer, reset colour, and reactivate platform upon leaving 
     private void OnTriggerExit(Collider col)
     {
         if (col.gameObject.tag == "Player")
         {
             timer = waitTime + 1;
+            Reset();
         }
+    }
 
+
+    private void Reset()
+    {
         rend.enabled = true;
         p_col.enabled = true;
+        mat.color = Color.green;
     }
 }

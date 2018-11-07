@@ -2428,7 +2428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ae951e178fe7804290bd7ff5f27a1ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 3
+  waitTime: 9
   rend: {fileID: 0}
 --- !u!65 &1736573421
 BoxCollider:
