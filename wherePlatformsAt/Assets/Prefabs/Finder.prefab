@@ -4484,8 +4484,6 @@ MonoBehaviour:
   startTimeBtwShots: 1
   bullet: {fileID: 1603677316681686, guid: dfcba92f6a7bb98449a550e671bf0362, type: 2}
   firePosition: {fileID: 1590021524812986}
-  ragdollSkeleton: {fileID: 1125202029108170}
-  skeleton: {fileID: 1589991584871926}
   ragdollRB:
   - {fileID: 54270764465157916}
   - {fileID: 54313862240442180}
@@ -4758,7 +4756,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 8811fba628e044e499f02a2cd62cc8b2, type: 2}
+  - {fileID: 2100000, guid: df940cab758d7f449be0408e39f2e6a7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
