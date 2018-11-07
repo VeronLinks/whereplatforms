@@ -20,7 +20,7 @@ public class Lose : MonoBehaviour
    
     public void Restart()
     {
-        SceneManager.LoadScene(1);
+        Application.LoadLevel(1);
     }
 }
 
