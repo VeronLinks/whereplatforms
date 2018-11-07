@@ -16,6 +16,8 @@ TagManager:
   - bouncyS
   - enemBullet
   - lavaBall
+  - falling
+  - Collectable
   layers:
   - Default
   - TransparentFX

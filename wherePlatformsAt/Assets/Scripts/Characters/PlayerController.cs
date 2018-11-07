@@ -7,12 +7,14 @@ public class PlayerController : MonoBehaviour {
 
     public GameObject bullet;
     public GameObject Paint;
+    public GameObject collectable;
     public Transform firePoint;
     public Transform center;
     public Transform respawn;
 
     private bool canFire = true;
     private int ammo = 0;
+    private int score = 0;
     private int lives = 3;
 
     private CharController playerChar;
@@ -73,11 +75,18 @@ public class PlayerController : MonoBehaviour {
                 ammo = 25;
             }
         }
+        if (other.gameObject.tag == "Collectable") //if player collides with the collectable prefab
+        {
+
+            Destroy(other.gameObject);
+            score++;
+        }
     }
 
     void OnGUI() //prints ammo out to the screen
     {
         GUI.Box(new Rect(10, 10, 100, 30), "Ammo: " + ammo);
+        GUI.Box(new Rect(10, 40, 100, 30), "Score: " + score);
         //GUI.Box(new Rect(10, 40, 100, 30), "Lives: " + lives);
     }
 }
