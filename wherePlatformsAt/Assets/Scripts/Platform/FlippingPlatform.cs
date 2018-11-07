@@ -20,6 +20,8 @@ public class FlippingPlatform : MonoBehaviour {
 
     private float rotTime = 0.0f;   //time rotating
     private Quaternion[] rotations;
+    private int currentRot = 0;
+    private bool trigger = false;
 
     private State state = State.Idle;
 
@@ -29,10 +31,6 @@ public class FlippingPlatform : MonoBehaviour {
         Rotating
     }
 
-    private int currentRot = 0;
-    private bool trigger = false;
-
-    // Use this for initialization
     void Start()
     {
         rotations = new Quaternion[platformNumberOfFaces];
@@ -64,12 +62,16 @@ public class FlippingPlatform : MonoBehaviour {
         {
             trigger = true;
         }
-    }
 
-    // Update is called once per frame
+        if (rotDuration < Mathf.Epsilon)
+        {
+            rotDuration = Mathf.Epsilon;
+        }
+    }
+    
     void Update()
     {
-        if (trigger) //Trigger
+        if (trigger)
         {
             Invoke("ActivateRotation", secondsBetweenRotations);
             trigger = false;
@@ -81,33 +83,26 @@ public class FlippingPlatform : MonoBehaviour {
         float dt = Time.fixedDeltaTime;
         float t;
         Quaternion newRot;
-        //if the mouse has been released
+
         switch (state)
         {
             case (State.Idle):
                 //nothing
                 break;
-            case (State.Rotating):  //returning to base rotation dragin the hub
+            case (State.Rotating):
                 //calculate the next rotation with an interpolation
                 rotTime += dt;
                 t = rotTime / rotDuration;
                 newRot = Quaternion.Slerp(transform.localRotation, rotations[currentRot], t);
-
-
+                
                 if (Quaternion.Angle(transform.localRotation, newRot) <= Mathf.Epsilon)
                 {
                     transform.localRotation = rotations[currentRot];
-                    //if it was returning we end the rotation and set the time of the next rotation to the adjust time
                     state = State.Idle;
                     trigger = true;
                 }
-
-
-
                 else
                 {
-                    /*Quaternion offset = newRot * Quaternion.Inverse(transform.rotation);
-                    this.transform.Rotate(offset.eulerAngles, Space.World);*/
                     transform.localRotation = newRot;
                 }
 
