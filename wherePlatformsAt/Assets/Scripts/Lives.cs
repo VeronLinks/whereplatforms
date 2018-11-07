@@ -2,37 +2,46 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+public class Lives : MonoBehaviour
+{
+    public int lives = 3;
+    // Use this for initialization
+    void Start()
+    {
 
-public class Lives : MonoBehaviour {
-    private int lives = 3;
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Lava")
         {
             lives--;
         }
-        if (lives < 1)
+        if (other.gameObject.tag == "enemBullet")
         {
-            Cursor.lockState = CursorLockMode.None;
+            lives--;
+        }
+        if (lives < 0)
+        {
             Cursor.visible = true;
-            SceneManager.LoadScene(4);
+            Cursor.lockState = CursorLockMode.None;
+            Application.LoadLevel(4);
         }
     }
-    public void death()
+
+
+
+    private void OnGUI()
     {
-        
+        GUI.Box(new Rect(10, 50, 100, 30), "Lives: " + lives);
+
+
     }
-private void OnGUI()
-    {
-        GUI.Box(new Rect(10,50, 100, 30), "Lives: " +lives);
-    }
+
 }
+

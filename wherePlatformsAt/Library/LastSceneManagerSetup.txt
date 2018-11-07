@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/invisibleDemo.unity
+=======
+- path: Assets/Scenes/DemoEnemies.unity
+>>>>>>> bfb7e238f3e19aafd09b02e44038dadc7397b04d
   isLoaded: 1
   isActive: 1
