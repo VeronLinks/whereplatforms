@@ -92,6 +92,8 @@ public class FlippingPlatform : MonoBehaviour {
                 rotTime += dt;
                 t = rotTime / rotDuration;
                 newRot = Quaternion.Slerp(transform.localRotation, rotations[currentRot], t);
+
+
                 if (Quaternion.Angle(transform.localRotation, newRot) <= Mathf.Epsilon)
                 {
                     transform.localRotation = rotations[currentRot];
@@ -99,12 +101,16 @@ public class FlippingPlatform : MonoBehaviour {
                     state = State.Idle;
                     trigger = true;
                 }
+
+
+
                 else
                 {
                     /*Quaternion offset = newRot * Quaternion.Inverse(transform.rotation);
                     this.transform.Rotate(offset.eulerAngles, Space.World);*/
                     transform.localRotation = newRot;
                 }
+
                 break;
         }
     }

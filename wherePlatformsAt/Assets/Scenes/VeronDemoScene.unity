@@ -341,10 +341,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 458ff45d150b1b24594dd57d85b5c63a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platformNumberOfFaces: 2
+  platformNumberOfFaces: 8
   rotDuration: 5
   secondsBetweenRotations: 1
-  differenceAngle: 180
+  differenceAngle: 45
   axis: 90
 --- !u!65 &335438375
 BoxCollider:
@@ -1140,8 +1140,14 @@ Prefab:
       objectReference: {fileID: 1037078699}
     - target: {fileID: 1302999836875440, guid: 3d96b304c84f9fe4cb0b4d05a2f4f01e, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114418509708615098, guid: 3d96b304c84f9fe4cb0b4d05a2f4f01e,
+        type: 2}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 1603677316681686, guid: 4d0bb968d1531d745a811d0a9b41ec9b,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d96b304c84f9fe4cb0b4d05a2f4f01e, type: 2}
   m_IsPrefabAsset: 0
@@ -1386,8 +1392,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1996476986567008, guid: 3083f49f56e785d4a95b85a310112169, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114032692187220676, guid: 3083f49f56e785d4a95b85a310112169,
+        type: 2}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 1603677316681686, guid: 4d0bb968d1531d745a811d0a9b41ec9b,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3083f49f56e785d4a95b85a310112169, type: 2}
   m_IsPrefabAsset: 0
