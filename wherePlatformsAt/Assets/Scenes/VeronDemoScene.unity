@@ -342,7 +342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformNumberOfFaces: 8
-  rotDuration: 4
+  rotDuration: 5
   secondsBetweenRotations: 1
   differenceAngle: 45
   axis: 90
