@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/DemoEnemies.unity
+- path: Assets/Scenes/Lose.unity
   isLoaded: 1
   isActive: 1
