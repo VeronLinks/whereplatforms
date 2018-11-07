@@ -95,7 +95,7 @@ public class FlippingPlatform : MonoBehaviour {
                 t = rotTime / rotDuration;
                 newRot = Quaternion.Slerp(transform.localRotation, rotations[currentRot], t);
                 
-                if (Quaternion.Angle(transform.localRotation, newRot) <= Mathf.Epsilon)
+                if (Quaternion.Angle(newRot, rotations[currentRot]) <= Mathf.Epsilon)
                 {
                     transform.localRotation = rotations[currentRot];
                     state = State.Idle;
