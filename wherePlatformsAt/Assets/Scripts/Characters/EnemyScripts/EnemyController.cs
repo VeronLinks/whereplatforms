@@ -15,8 +15,6 @@ public class EnemyController : MonoBehaviour
     public float startTimeBtwShots;
     public GameObject bullet;
     public GameObject firePosition;
-    public GameObject ragdollSkeleton;
-    public GameObject skeleton;
     public Rigidbody[] ragdollRB;
 
     private PlayerController thePlayer;
