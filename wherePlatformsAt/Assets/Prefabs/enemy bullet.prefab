@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 136973461995031342}
   m_Layer: 0
   m_Name: enemy bullet
-  m_TagString: Untagged
+  m_TagString: enemBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  seconds: 3
 --- !u!136 &136096373582627740
 CapsuleCollider:
   m_ObjectHideFlags: 1

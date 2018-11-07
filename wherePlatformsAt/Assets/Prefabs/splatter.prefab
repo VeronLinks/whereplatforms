@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4836613115921954}
   - component: {fileID: 23077421854107914}
   - component: {fileID: 64314413758688954}
+  - component: {fileID: 114796593287983218}
   m_Layer: 0
   m_Name: splatter
   m_TagString: Untagged
@@ -120,6 +121,18 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 0}
+--- !u!114 &114796593287983218
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1267074925013010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 442fc1a9319c72447b3e885817ee2d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seconds: 30
 --- !u!212 &212369991036548616
 SpriteRenderer:
   m_ObjectHideFlags: 1

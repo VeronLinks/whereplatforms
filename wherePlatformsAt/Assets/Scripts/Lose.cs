@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Lose : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class Lose : MonoBehaviour
    
     public void Restart()
     {
-        Application.LoadLevel(1);
+        SceneManager.LoadScene(1);
     }
 }
 

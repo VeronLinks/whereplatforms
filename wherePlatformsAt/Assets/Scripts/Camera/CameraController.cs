@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour {
 
+    /*
+     * Author: Javier Verón
+     * 
+     * This controlls the third person camera using real physics to move it as it had springs.
+     */
+
     #region Public Attributes
     public Vector3 baseOffset = new Vector3(0.0f, 3.0f, -8.0f);
     public Vector3 lookAtOffset = new Vector3(0.0f, 0.0f, 8.0f);

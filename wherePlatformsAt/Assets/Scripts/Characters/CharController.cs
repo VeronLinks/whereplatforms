@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Author: Javier Verón
+ * 
+ * This controlls everything in the movement and movement animations for both player and 
+ * enemys but needs the inputs from a controller for working.
+ */
+
 public class CharController : MonoBehaviour {
 
     #region Public Attributes
@@ -19,8 +26,8 @@ public class CharController : MonoBehaviour {
     #region Private Attributes
     private float vvelocityLinear = 0.0f;
     private float hvelocityLinear = 0.0f;
-    private Vector3 moveDirection = Vector3.zero;
     //private float velocityAngular = 0.0f;
+    public Vector3 moveDirection = Vector3.zero;
     private CharacterController controller;
     private float jumpingCount = 0;
     private bool ableToJump = true;
@@ -50,7 +57,6 @@ public class CharController : MonoBehaviour {
     public Vector3 MoveDirection
     {
         get { return moveDirection; }
-        //set { moveDirection = value; }
     }
     public bool JumpTrigger
     {
@@ -112,12 +118,7 @@ public class CharController : MonoBehaviour {
                 jumpingCount = 0;
             }
             moveDirection.y += gravity * dt;
-            //apply gravity if you aren't grounded
-
         }
-
-        //apply the movement to the controller
-        //controller.Move(Vector3.right * moveDirection.x * dt + Vector3.up * moveDirection.y * dt + Vector3.forward * moveDirection.z * dt);
 
         moveDirection = transform.TransformDirection(moveDirection);
 
@@ -128,18 +129,6 @@ public class CharController : MonoBehaviour {
         anim.SetFloat("XSpeed", hvelocityLinear);
         anim.SetFloat("AbsXSpeed", Mathf.Abs(hvelocityLinear));
         anim.SetBool("Grounded", controller.isGrounded);
-
-        /* float vTargetRot = horizontalAxis * maxRotVel;
-         float voffsetRot = vTargetRot - velocityAngular;
-         velocityAngular += Mathf.Clamp(voffsetRot, -2 * accelAngular * dt, 2 * accelAngular * dt);*/
-
-        //transform.eulerAngles += new Vector3(0.0f, velocityAngular * dt, 0.0f);
-
-
-        /*if (attacking)
-        {
-            attacking = false;
-        }*/
 
         if (!alive)
         {

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Win : MonoBehaviour {
 
@@ -20,7 +21,7 @@ public class Win : MonoBehaviour {
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            Application.LoadLevel(3);
+            SceneManager.LoadScene(3);
         }
     }
 }

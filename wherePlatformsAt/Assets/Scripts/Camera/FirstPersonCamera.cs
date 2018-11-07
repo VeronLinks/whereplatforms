@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Author: Javier Verón
+ * 
+ * This camera works for both first person and third person, but in this last one it also needs the CameraController, 
+ * which it doesn't for first person.
+ */
+
 public class FirstPersonCamera : MonoBehaviour {
 
     #region Public Attributes
@@ -14,9 +21,6 @@ public class FirstPersonCamera : MonoBehaviour {
     #region Private Attributes
     private Vector2 mouseLook;
     private Vector2 smoothV;
-    private float prevX;
-    private CharController charCont;
-    private CameraController cameraCont;
     #endregion
 
     #region Properties
@@ -27,8 +31,6 @@ public class FirstPersonCamera : MonoBehaviour {
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        charCont = character.GetComponent<CharController>();
-        cameraCont = GetComponent<CameraController>();
     }
 
     void Update()
