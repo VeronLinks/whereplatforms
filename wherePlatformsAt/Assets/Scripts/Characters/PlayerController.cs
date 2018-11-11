@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour {
     private int ammo = 0;
     private int score = 0;
     private int lives = 3;
+    private string door = "Closed";
 
     private CharController playerChar;
 
@@ -49,6 +50,10 @@ public class PlayerController : MonoBehaviour {
         {
             canFire = true;
         }
+        if(lives == 0)
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -57,6 +62,10 @@ public class PlayerController : MonoBehaviour {
         {
             transform.position = respawn.position;
         }
+        if (other.gameObject.tag == "Finish")
+        {
+            SceneManager.LoadScene(3);
+        }
         if (other.gameObject.tag == "bouncyS")
         {
             playerChar.moveDirection.y = 15;
@@ -64,6 +73,10 @@ public class PlayerController : MonoBehaviour {
         if (other.gameObject.tag == "bouncyB")
         {
             playerChar.moveDirection.y = 30;
+        }
+        if (other.gameObject.tag == "Lava")
+        {
+            lives--;
         }
         if (other.gameObject.tag == "Paint") //if player collides with the paint prefab
         {
@@ -81,12 +94,18 @@ public class PlayerController : MonoBehaviour {
             Destroy(other.gameObject);
             score++;
         }
+        if (other.gameObject.tag == "Key") //if player collides with the collectable prefab
+        {
+
+            door = "Opened";
+        }
     }
 
     void OnGUI() //prints ammo out to the screen
     {
         GUI.Box(new Rect(10, 10, 100, 30), "Ammo: " + ammo);
         GUI.Box(new Rect(10, 40, 100, 30), "Score: " + score);
-        //GUI.Box(new Rect(10, 40, 100, 30), "Lives: " + lives);
+        GUI.Box(new Rect(120, 10, 100, 30), "Lives: " + lives);
+        GUI.Box(new Rect(120, 40, 100, 30), "Door: " + door);
     }
 }
