@@ -101,7 +101,7 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    void OnGUI() //prints ammo out to the screen
+    void OnGUI() //prints HUD out to the screen
     {
         GUI.Box(new Rect(10, 10, 100, 30), "Ammo: " + ammo);
         GUI.Box(new Rect(10, 40, 100, 30), "Score: " + score);
