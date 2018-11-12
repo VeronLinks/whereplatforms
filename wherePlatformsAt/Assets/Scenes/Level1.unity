@@ -517,11 +517,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4863821854824006, guid: 293a4061665e88049a6bb81067af3457, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -134.52
+      value: -140.6
       objectReference: {fileID: 0}
     - target: {fileID: 4863821854824006, guid: 293a4061665e88049a6bb81067af3457, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 243.63
+      value: 249.44
       objectReference: {fileID: 0}
     - target: {fileID: 4863821854824006, guid: 293a4061665e88049a6bb81067af3457, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1168,7 +1168,7 @@ GameObject:
   m_Layer: 0
   m_Name: Respawn
   m_TagString: Untagged
-  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1179,7 +1179,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 719417486}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 271.78, y: -140.42, z: 246.08}
+  m_LocalPosition: {x: 262.04, y: -138.95, z: 249}
   m_LocalScale: {x: 0.21025504, y: 0.28243664, z: 0.26629117}
   m_Children: []
   m_Father: {fileID: 0}
