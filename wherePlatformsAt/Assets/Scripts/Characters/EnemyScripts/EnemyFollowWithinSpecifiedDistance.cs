@@ -17,6 +17,8 @@ public class EnemyFollowWithinSpecifiedDistance : MonoBehaviour {
     private PlayerController thePlayer;
     private EnemyController eController;
     private CharController cController;
+    private CapsuleCollider cCollider;
+    private float distToFall;
 
     // Use this for initialization
     void Awake ()
@@ -24,6 +26,12 @@ public class EnemyFollowWithinSpecifiedDistance : MonoBehaviour {
         cController = GetComponent<CharController>();
         thePlayer = FindObjectOfType<PlayerController>();
         eController = GetComponent<EnemyController>();
+        cCollider = GetComponent<CapsuleCollider>();
+    }
+
+    private void Start()
+    {
+        distToFall = Mathf.Sqrt((cController.maxVel * cController.maxVel) + (transform.position.y + cCollider.height/2 * transform.position.y + cCollider.height/2));
     }
 
     private void Update()
@@ -37,7 +45,15 @@ public class EnemyFollowWithinSpecifiedDistance : MonoBehaviour {
             player.y = 0.0f;
             position.y = 0.0f;
             float currDistance = Vector3.Distance(position, player);
-            if (currDistance < maxDist && currDistance > minDist)
+
+            Vector3 hitPoint = transform.forward.normalized * cController.maxVel;
+            hitPoint.y -= cCollider.height / 2;
+            Vector3 startPoint = new Vector3(transform.position.x, transform.position.y + cCollider.height/2, transform.position.z);
+            RaycastHit hit;
+            //Debug.DrawRay(startPoint, hitPoint, Color.blue);
+            bool dist = currDistance < maxDist && currDistance > minDist;
+            bool notFalling = Physics.Raycast(startPoint, hitPoint, out hit, distToFall);
+            if (dist && notFalling)
             {
                 cController.VerticalAxis = 1;
             }
