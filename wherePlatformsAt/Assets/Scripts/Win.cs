@@ -23,7 +23,6 @@ public class Win : MonoBehaviour
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
-            Application.LoadLevel(3);
         }
     }
 }

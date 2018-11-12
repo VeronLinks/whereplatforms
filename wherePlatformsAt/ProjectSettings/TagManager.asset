@@ -16,6 +16,10 @@ TagManager:
   - bouncyS
   - enemBullet
   - lavaBall
+  - falling
+  - Collectable
+  - Door
+  - Key
   layers:
   - Default
   - TransparentFX
