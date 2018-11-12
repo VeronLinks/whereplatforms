@@ -5978,7 +5978,7 @@ Transform:
   - {fileID: 4030853234887038}
   - {fileID: 4489840913974356}
   m_Father: {fileID: 4849166771219822}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4271500676882460
 Transform:
@@ -6363,8 +6363,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1235635609212084}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -150, y: 20, z: -10}
-  m_LocalScale: {x: 300.00037, y: 40, z: 1}
+  m_LocalPosition: {x: -150, y: 20, z: -27}
+  m_LocalScale: {x: 215, y: 40, z: 1}
   m_Children: []
   m_Father: {fileID: 4639019331236420}
   m_RootOrder: 2
@@ -6866,8 +6866,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1620898677089462}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 150, y: 20, z: -10}
-  m_LocalScale: {x: 300.00037, y: 40, z: 1}
+  m_LocalPosition: {x: 150, y: 20, z: -27}
+  m_LocalScale: {x: 215, y: 40, z: 1}
   m_Children: []
   m_Father: {fileID: 4639019331236420}
   m_RootOrder: 3
@@ -7058,7 +7058,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1290373751067868}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 20, z: 130}
+  m_LocalPosition: {x: 0, y: 20, z: 70}
   m_LocalScale: {x: 310, y: 40, z: 1}
   m_Children: []
   m_Father: {fileID: 4639019331236420}
@@ -8161,7 +8161,7 @@ Transform:
   m_Children:
   - {fileID: 4705068080066188}
   m_Father: {fileID: 4849166771219822}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4813996991289128
 Transform:
@@ -8257,8 +8257,8 @@ Transform:
   - {fileID: 4988042091880690}
   - {fileID: 4308918801723314}
   - {fileID: 4401068952480042}
-  - {fileID: 4796382813797600}
   - {fileID: 4271124903914406}
+  - {fileID: 4796382813797600}
   - {fileID: 4639019331236420}
   - {fileID: 4063104746057626}
   - {fileID: 4951307049855086}
@@ -10137,8 +10137,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 305, y: 1, z: 270}
-  m_Center: {x: 152.5, y: 0, z: 135}
+  m_Size: {x: 305, y: 1, z: 210}
+  m_Center: {x: 152.5, y: 0, z: 105}
 --- !u!65 &65447483350543634
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -10382,8 +10382,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxVel: 8
   accel: 16
-  maxRotVel: 120
-  accelAngular: 240
   horizontalVelMultiplier: 0.8
   jumpSpeed: 8
   jumpingSecondsSet: 1
@@ -10432,8 +10430,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxVel: 7
   accel: 14
-  maxRotVel: 120
-  accelAngular: 240
   horizontalVelMultiplier: 0.8
   jumpSpeed: 8
   jumpingSecondsSet: 1
@@ -10507,8 +10503,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxVel: 10
   accel: 20
-  maxRotVel: 120
-  accelAngular: 240
   horizontalVelMultiplier: 0.8
   jumpSpeed: 15
   jumpingSecondsSet: 1
