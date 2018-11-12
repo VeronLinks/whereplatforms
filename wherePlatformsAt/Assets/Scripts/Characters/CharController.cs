@@ -14,8 +14,6 @@ public class CharController : MonoBehaviour {
     #region Public Attributes
     public float maxVel = 10.0f;
     public float accel = 20.0f;
-    public float maxRotVel = 120.0f;
-    public float accelAngular = 240.0f;
     [Range(0.0f, 1.0f)]
     public float horizontalVelMultiplier = 0.8f;
     public float jumpSpeed = 8.0f;

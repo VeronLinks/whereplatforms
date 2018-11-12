@@ -110,9 +110,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xSize: 305
-  zSize: 270
+  zSize: 210
   scale: 90
-  speed: 0.1
+  speed: 0.03
 --- !u!114 &114924650806553948
 MonoBehaviour:
   m_ObjectHideFlags: 1
