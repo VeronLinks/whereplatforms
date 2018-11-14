@@ -4,27 +4,28 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class PathFinder : MonoBehaviour {
-
-    public float maxDist = 15.0f;
-    public float minDist = 3.0f;
-
+    
     public Transform player;
+    
+    private NavMeshAgent navAgent;
+    private Animator anim;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
+    // Use this for initialization
+    void Awake () {
+        navAgent = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
+    }
+
+    // Update is called once per frame
+    void Update ()
     {
-        float currDistance = Vector3.Distance(this.transform.position, player.position);
-        bool dist = currDistance < maxDist && currDistance > minDist;
+        transform.rotation = Quaternion.Euler(0.0f, transform.eulerAngles.y, 0.0f);
+        navAgent.SetDestination(player.position);
+        float vel = Mathf.Sqrt(navAgent.velocity.z * navAgent.velocity.z + navAgent.velocity.x * navAgent.velocity.x) * 2;
 
-        if (dist)
-        {
-            transform.GetComponent<NavMeshAgent>().destination = player.position;
-        }
-        
+        anim.SetFloat("ZSpeed", vel);
+        anim.SetFloat("AbsZSpeed", Mathf.Abs(vel));
+        anim.SetFloat("YSpeed", 0);
+        anim.SetBool("Grounded", true);
 	}
 }
