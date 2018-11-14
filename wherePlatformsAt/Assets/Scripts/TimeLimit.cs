@@ -17,15 +17,21 @@ public class TimeLimit : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-       
+        float time;
+       time = PlayerPrefs.GetFloat("Timer", 0);
+
+        Text text;
+        text = GetComponent<Text>();
+        text.text = " " + time;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        PlayerPrefs.GetFloat("Timer", endtime);
+      
         
-        timerText.text = " " + endtime;
+        
     }
     
 
