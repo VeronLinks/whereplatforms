@@ -38,11 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-<<<<<<< HEAD
-  m_IndirectSpecularColor: {r: 0.4390956, g: 0.48735023, b: 0.56760424, a: 1}
-=======
   m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
->>>>>>> 23d66797ce77ba133bf83673d5853d8589822646
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -579,7 +575,7 @@ Prefab:
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c7a308f4e867cb246af707103c1e9dad, type: 2}
+      objectReference: {fileID: 2100000, guid: a88095604afb67f468c1d3639380a5fd, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b1ae0a2d184d32458f3494437e4471e, type: 2}
   m_IsPrefabAsset: 0
@@ -2021,6 +2017,16 @@ Prefab:
       propertyPath: respawn
       value: 
       objectReference: {fileID: 719417487}
+    - target: {fileID: 23221553343067486, guid: ecf91e1c217b65e4497cc7eda9ea24cc,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 754229dc66b057d40bcd2ebe48424571, type: 2}
+    - target: {fileID: 114324994049089918, guid: ecf91e1c217b65e4497cc7eda9ea24cc,
+        type: 2}
+      propertyPath: secondsBetweenRotations
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecf91e1c217b65e4497cc7eda9ea24cc, type: 2}
   m_IsPrefabAsset: 0
@@ -2616,7 +2622,7 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.5
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
