@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:wherePlatformsAt/Assets/Art/Coin_1.fbm.meta
 guid: a1b5e3240456b734ca0db1c9aa151be7
+=======
+guid: fa80ce3feec2ff742b61794d43ad34bc
+>>>>>>> 46f1e2f735f5381191e859f8a87cead39a7d294e:wherePlatformsAt/Assets/Art/Coin_1.fbm.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

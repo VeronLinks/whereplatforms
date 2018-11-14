@@ -5,6 +5,9 @@ using UnityEngine.AI;
 
 public class PathFinder : MonoBehaviour {
 
+    public float maxDist = 15.0f;
+    public float minDist = 3.0f;
+
     public Transform player;
 
 	// Use this for initialization
@@ -15,6 +18,13 @@ public class PathFinder : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        transform.GetComponent<NavMeshAgent>().destination = player.position;
+        float currDistance = Vector3.Distance(this.transform.position, player.position);
+        bool dist = currDistance < maxDist && currDistance > minDist;
+
+        if (dist)
+        {
+            transform.GetComponent<NavMeshAgent>().destination = player.position;
+        }
+        
 	}
 }
