@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour {
 
     public GameObject bullet;
-    public GameObject Paint;
-    public GameObject collectable;
     public Transform firePoint;
     public Transform center;
     public Transform respawn;
