@@ -113,16 +113,11 @@ public class PlayerController : MonoBehaviour {
             door = "Opened";
         }
     }
-<<<<<<< HEAD
     void Count()
     {
         time++;
     }
-    void OnGUI() //prints ammo out to the screen
-=======
-
-    void OnGUI() //prints HUD out to the screen
->>>>>>> 667286f0c35aef60e14027e99709ada4a8fa83ab
+    void OnGUI() 
     {
         GUI.Box(new Rect(10, 10, 100, 30), "Ammo: " + ammo);
         GUI.Box(new Rect(10, 40, 100, 30), "Score: " + score);
