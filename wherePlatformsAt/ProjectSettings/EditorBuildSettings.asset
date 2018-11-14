@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: d4b458069bc233e4dbca6223bbc31c09
   - enabled: 1
-    path: Assets/Scenes/DemoEnemies.unity
-    guid: dbea1814df611d84d8191ca18f31d52c
+    path: Assets/Scenes/New Scene.unity
+    guid: 31d4bcde28be7d140a7a0928723507be
   - enabled: 1
     path: Assets/Scenes/Controlls.unity
     guid: c990d03c4c80cac4da83a87f14a96b83

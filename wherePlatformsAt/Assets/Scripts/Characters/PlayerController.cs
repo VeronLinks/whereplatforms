@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
@@ -11,6 +12,10 @@ public class PlayerController : MonoBehaviour {
     public Transform firePoint;
     public Transform center;
     public Transform respawn;
+
+    private float time = 0;
+    private float endtime;
+    public Text timerText;
 
     private bool canFire = true;
     private int ammo = 0;
@@ -27,7 +32,10 @@ public class PlayerController : MonoBehaviour {
 
     void Start()
     {
+
+
         playerChar = GetComponent<CharController>();
+        InvokeRepeating("Count", 0.0f, 1.0f);
     }
 
     void Update()
@@ -53,7 +61,9 @@ public class PlayerController : MonoBehaviour {
         if(lives == 0)
         {
             SceneManager.LoadScene(0);
+            
         }
+        
     }
 
     void OnTriggerEnter(Collider other)
@@ -64,7 +74,10 @@ public class PlayerController : MonoBehaviour {
         }
         if (other.gameObject.tag == "Finish")
         {
+            PlayerPrefs.SetFloat("Timer", time);
+            PlayerPrefs.GetFloat("Timer", endtime);
             SceneManager.LoadScene(3);
+            timerText.text = ("tim2"+time);
         }
         if (other.gameObject.tag == "bouncyS")
         {
@@ -100,12 +113,16 @@ public class PlayerController : MonoBehaviour {
             door = "Opened";
         }
     }
-
+    void Count()
+    {
+        time++;
+    }
     void OnGUI() //prints ammo out to the screen
     {
         GUI.Box(new Rect(10, 10, 100, 30), "Ammo: " + ammo);
         GUI.Box(new Rect(10, 40, 100, 30), "Score: " + score);
         GUI.Box(new Rect(120, 10, 100, 30), "Lives: " + lives);
         GUI.Box(new Rect(120, 40, 100, 30), "Door: " + door);
+        GUI.Box(new Rect(250, 10, 100, 30), "timer: " + time);
     }
 }
