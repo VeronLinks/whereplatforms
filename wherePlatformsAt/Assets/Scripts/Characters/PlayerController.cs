@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour {
 
     private float time = 0;
     private float endtime;
-    public Text timerText;
+    
 
     private bool canFire = true;
     private int ammo = 0;
@@ -75,9 +75,9 @@ public class PlayerController : MonoBehaviour {
         if (other.gameObject.tag == "Finish")
         {
             PlayerPrefs.SetFloat("Timer", time);
-            PlayerPrefs.GetFloat("Timer", endtime);
+            
             SceneManager.LoadScene(3);
-            timerText.text = ("tim2"+time);
+           
         }
         if (other.gameObject.tag == "bouncyS")
         {
@@ -113,16 +113,16 @@ public class PlayerController : MonoBehaviour {
             door = "Opened";
         }
     }
-<<<<<<< HEAD
+
     void Count()
     {
         time++;
     }
-    void OnGUI() //prints ammo out to the screen
-=======
+   
+
 
     void OnGUI() //prints HUD out to the screen
->>>>>>> 667286f0c35aef60e14027e99709ada4a8fa83ab
+
     {
         GUI.Box(new Rect(10, 10, 100, 30), "Ammo: " + ammo);
         GUI.Box(new Rect(10, 40, 100, 30), "Score: " + score);
