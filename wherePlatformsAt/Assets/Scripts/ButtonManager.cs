@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
+    public void start()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
     public void Start()
     {
         Cursor.lockState = CursorLockMode.None;
