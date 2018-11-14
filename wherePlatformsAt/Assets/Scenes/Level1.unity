@@ -887,7 +887,7 @@ MonoBehaviour:
   sensitivity: 5
   smoothing: 2
   character: {fileID: 545569458}
-  characterReference: {fileID: 0}
+  characterReference: {fileID: 593781028}
 --- !u!114 &399970606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1345,6 +1345,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4061577229532382, guid: 0c0ff49ff09754f4e89b4601e969f78e,
     type: 2}
   m_PrefabInternal: {fileID: 562967445}
+--- !u!1 &593781028 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1962951690107420, guid: 293a4061665e88049a6bb81067af3457,
+    type: 2}
+  m_PrefabInternal: {fileID: 291074473}
 --- !u!1001 &664002817
 Prefab:
   m_ObjectHideFlags: 0
