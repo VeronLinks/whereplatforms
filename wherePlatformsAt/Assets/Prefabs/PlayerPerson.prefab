@@ -1930,7 +1930,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1739521466311160}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.29, y: 0, z: 12.47}
+  m_LocalPosition: {x: 6.9481964, y: 1, z: 8.777338}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4447842613849524}
@@ -2182,6 +2182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 1577028779532516, guid: 567d26c2e4382244d8d8ae1c03a2cf72, type: 2}
   Paint: {fileID: 1581633807235494, guid: 00df471bcd6de5445950021ea48497c8, type: 2}
+  collectable: {fileID: 0}
   firePoint: {fileID: 4669800601701902}
   center: {fileID: 4441573508107078}
   respawn: {fileID: 0}
