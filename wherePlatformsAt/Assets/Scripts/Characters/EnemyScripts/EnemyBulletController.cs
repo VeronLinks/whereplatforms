@@ -35,8 +35,8 @@ public class EnemyBulletController : MonoBehaviour {
 
     }
     
-    private void ActiveCollider()
+   /* private void ActiveCollider()
     {
         GetComponent<BoxCollider>().enabled = true;
-    }
+    }*/
 }

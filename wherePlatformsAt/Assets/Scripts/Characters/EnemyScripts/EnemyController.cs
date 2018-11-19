@@ -22,6 +22,15 @@ public class EnemyController : MonoBehaviour
     private float distToHitPlayer;
     // Bit shift the index of the layer to get a bit mask
     int layerMask;
+    private State state = State.NotShooting;
+
+    enum State
+    {
+        //Alive,
+        Shooting,
+        NotShooting,
+        Dead
+    }
 
     private bool alive;
 
@@ -55,10 +64,22 @@ public class EnemyController : MonoBehaviour
 
     void Update ()
     {
-        if (alive)
+        switch(state)
         {
-            if (shoot)
-            {   
+            //As Alive state did the same as NotShooting I chose to leave NotShooting and delete Alive state.
+            /*case State.Alive:
+                switch (shoot)
+                {
+                    case true:
+                        state = State.Shooting;
+                        break;
+                    case false:
+                        state = State.NotShooting;
+                        break;
+                }
+                break;*/ 
+
+            case State.Shooting:
                 Vector3 firePos = firePosition.transform.position;
                 Vector3 dir = (thePlayer.gameObject.transform.position + new Vector3(0.0f, 1.19f, 0.0f)) - firePos;
                 RaycastHit hit;
@@ -74,13 +95,44 @@ public class EnemyController : MonoBehaviour
                     }
                 }
                 timeBtwShots -= Time.deltaTime;
-            }
+
+                switch (shoot)
+                {
+                    case true:
+                        state = State.Shooting;
+                        break;
+                    case false:
+                        state = State.NotShooting;
+                        break;
+                }
+                break;
+
+            case State.NotShooting:
+                switch (shoot)
+                {
+                    case true:
+                        state = State.Shooting;
+                        break;
+                    case false:
+                        state = State.NotShooting;
+                        break;
+                }
+                break;
+
+            case State.Dead:
+                if (alive)
+                {
+                    Death();
+                }
+                //else do nothing
+                break;
         }
 	}
 
     public void Death()
     {
         alive = false;
+        state = State.Dead;
         if (ragdollRB != null)
         {
             foreach (Rigidbody r in ragdollRB)
