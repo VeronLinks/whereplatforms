@@ -21,6 +21,7 @@ TagManager:
   - Door
   - Key
   - Ammo
+  - Shield
   layers:
   - Default
   - TransparentFX

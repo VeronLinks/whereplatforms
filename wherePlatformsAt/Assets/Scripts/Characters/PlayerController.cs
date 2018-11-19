@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour {
 
     public GameObject bullet;
+    public GameObject shield;
+    public GameObject axe;
     public Transform firePoint;
     public Transform center;
     public Transform respawn;
@@ -16,6 +18,7 @@ public class PlayerController : MonoBehaviour {
     
 
     private bool canFire = true;
+    private bool hasShield = false;
     private int ammo = 0;
     private int score = 0;
     private int lives = 3;
@@ -30,7 +33,8 @@ public class PlayerController : MonoBehaviour {
 
     void Start()
     {
-
+        shield.GetComponent<MeshRenderer>().enabled = false;
+        axe.GetComponent<MeshRenderer>().enabled = false;
 
         playerChar = GetComponent<CharController>();
         InvokeRepeating("Count", 0.0f, 1.0f);
@@ -61,6 +65,15 @@ public class PlayerController : MonoBehaviour {
             SceneManager.LoadScene(0);
             
         }
+
+        if(ammo > 0)
+        {
+            axe.GetComponent<MeshRenderer>().enabled = true;
+        }
+        else
+        {
+            axe.GetComponent<MeshRenderer>().enabled = false;
+        }
         
     }
 
@@ -68,14 +81,21 @@ public class PlayerController : MonoBehaviour {
     {
         if (other.gameObject.tag == "enemBullet")
         {
-            transform.position = respawn.position;
+            if(hasShield == true)
+            {
+                hasShield = false;
+                shield.GetComponent<MeshRenderer>().enabled = false;
+            }
+            else
+            {
+                transform.position = respawn.position;
+            } 
         }
         if (other.gameObject.tag == "Finish")
         {
             PlayerPrefs.SetFloat("Timer", time);
             
-            SceneManager.LoadScene(3);
-           
+            SceneManager.LoadScene(3); 
         }
         if (other.gameObject.tag == "bouncyS")
         {
@@ -90,8 +110,7 @@ public class PlayerController : MonoBehaviour {
             lives--;
         }
         if (other.gameObject.tag == "Ammo") //if player collides with the ammo prefab
-        {
-            
+        { 
             Destroy(other.gameObject);
             ammo += 5;
             if (ammo > 25) //limits ammo to 25
@@ -101,14 +120,18 @@ public class PlayerController : MonoBehaviour {
         }
         if (other.gameObject.tag == "Collectable") //if player collides with the collectable prefab
         {
-
             Destroy(other.gameObject);
             score++;
         }
-        if (other.gameObject.tag == "Key") //if player collides with the collectable prefab
+        if (other.gameObject.tag == "Key") //if player collides with the key
         {
-
             door = "Opened";
+        }
+        if (other.gameObject.tag == "Shield") //if player collides with the shield.
+        {
+            Destroy(other.gameObject);
+            hasShield = true;
+            shield.GetComponent<MeshRenderer>().enabled = true;
         }
     }
     void Count()
