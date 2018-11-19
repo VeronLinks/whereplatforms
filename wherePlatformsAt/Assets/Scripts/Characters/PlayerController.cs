@@ -120,10 +120,10 @@ public class PlayerController : MonoBehaviour {
 
     void OnGUI() //prints HUD out to the screen
     {
-        GUI.Box(new Rect(10, 10, 100, 30), "Ammo: " + ammo);
-        GUI.Box(new Rect(10, 40, 100, 30), "Score: " + score);
-        GUI.Box(new Rect(120, 10, 100, 30), "Lives: " + lives);
-        GUI.Box(new Rect(120, 40, 100, 30), "Door: " + door);
-        GUI.Box(new Rect(250, 10, 100, 30), "timer: " + time);
+        GUI.Box(new Rect(10, 10, 100, 30), "Door: " + door);
+        GUI.Box(new Rect(120, 10, 100, 30), "Score: " + score);
+        GUI.Box(new Rect(230, 10, 100, 30), "Lives: " + lives);
+        GUI.Box(new Rect(340, 10, 100, 30), "Ammo: " + ammo);
+        GUI.Box(new Rect(450, 10, 100, 30), "timer: " + time);
     }
 }
