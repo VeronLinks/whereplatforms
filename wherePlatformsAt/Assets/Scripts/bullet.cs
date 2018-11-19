@@ -6,7 +6,7 @@ using UnityEngine;
  * makes the bullet move towards the target when it is instantiated.
  */
 
-public class bullet : MonoBehaviour {
+public class Bullet : MonoBehaviour {
 
     //public GameObject splatter;
     public float seconds;
@@ -25,7 +25,7 @@ public class bullet : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        transform.Rotate(Vector3.up * Time.deltaTime);
+        transform.Rotate(Vector3.right, 400f * Time.deltaTime, Space.World);
         transform.position = Vector3.MoveTowards(transform.position, direction, speed * Time.deltaTime);
     }
 
@@ -34,11 +34,8 @@ public class bullet : MonoBehaviour {
         //ContactPoint contact = col.contacts[0];
         //Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
         //Vector3 pos = contact.point;
-
         //pos.y += 0.001f;
-
-        /*instantiates the splatter prefab and destroys the bullet when it collides with the platforms
-         */
+        //instantiates the splatter prefab and destroys the bullet when it collides with the platforms
         if (col.gameObject.tag == "Platform")
         {
             //Instantiate(splatter, pos, rot);

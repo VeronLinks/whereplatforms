@@ -20,6 +20,7 @@ TagManager:
   - Collectable
   - Door
   - Key
+  - Ammo
   layers:
   - Default
   - TransparentFX

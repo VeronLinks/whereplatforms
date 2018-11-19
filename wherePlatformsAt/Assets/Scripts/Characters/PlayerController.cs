@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour {
 
     void Fire()
     {
-        GameObject bulletClone = Instantiate(bullet, firePoint.transform.position, firePoint.transform.rotation);
+        Instantiate(bullet, firePoint.transform.position, firePoint.transform.rotation);
     }
 
     void Start()
@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour {
         {
             lives--;
         }
-        if (other.gameObject.tag == "Paint") //if player collides with the paint prefab
+        if (other.gameObject.tag == "Ammo") //if player collides with the ammo prefab
         {
             
             Destroy(other.gameObject);
