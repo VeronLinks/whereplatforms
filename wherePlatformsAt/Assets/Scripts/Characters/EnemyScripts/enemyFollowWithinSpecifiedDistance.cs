@@ -50,7 +50,7 @@ public class EnemyFollowWithinSpecifiedDistance : MonoBehaviour {
             hitPoint.y -= cCollider.height / 2;
             Vector3 startPoint = new Vector3(transform.position.x, transform.position.y + cCollider.height/2, transform.position.z);
             RaycastHit hit;
-            Debug.DrawRay(startPoint, hitPoint, Color.blue);
+            //Debug.DrawRay(startPoint, hitPoint, Color.blue);
             bool dist = currDistance < maxDist && currDistance > minDist;
             bool notFalling = Physics.Raycast(startPoint, hitPoint, out hit, distToFall);
             if (dist && notFalling)
