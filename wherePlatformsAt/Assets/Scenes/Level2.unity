@@ -2380,6 +2380,11 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 114873760953327196, guid: a701dc6a227d61d4fbc7ef436db2ff47,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1673259378}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a701dc6a227d61d4fbc7ef436db2ff47, type: 2}
   m_IsPrefabAsset: 0
