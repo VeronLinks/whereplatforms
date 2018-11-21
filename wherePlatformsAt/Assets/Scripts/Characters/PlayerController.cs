@@ -27,9 +27,9 @@ public class PlayerController : MonoBehaviour {
 
     private CharController playerChar;
 
-    void Fire()
+    private void Awake()
     {
-        Instantiate(bullet, firePoint.transform.position, firePoint.transform.rotation);
+        playerChar = GetComponent<CharController>();
     }
 
     void Start()
@@ -37,8 +37,12 @@ public class PlayerController : MonoBehaviour {
         shield.GetComponent<MeshRenderer>().enabled = false;
         axe.GetComponent<MeshRenderer>().enabled = false;
 
-        playerChar = GetComponent<CharController>();
         InvokeRepeating("Count", 0.0f, 1.0f);
+
+        if (respawn == null)
+        {
+            respawn = transform;
+        }
     }
 
     void Update()
@@ -179,8 +183,11 @@ public class PlayerController : MonoBehaviour {
     {
         time++;
     }
-   
 
+    void Fire()
+    {
+        Instantiate(bullet, firePoint.transform.position, firePoint.transform.rotation);
+    }
 
     void OnGUI() //prints HUD out to the screen
     {
