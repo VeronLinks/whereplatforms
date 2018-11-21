@@ -19,6 +19,7 @@ public class CharController : MonoBehaviour {
     public float jumpSpeed = 8.0f;
     public float jumpingSecondsSet = 1.0f;
     public float gravity = -9.8f;
+    public AudioClip running;
     #endregion
 
     #region Private Attributes
@@ -32,6 +33,7 @@ public class CharController : MonoBehaviour {
     private Animator anim;
     private float cameraInitialY;
     private float cameraInitialZ;
+    private AudioSource source;
 
     private float verticalAxis;
     private float horizontalAxis;
@@ -78,6 +80,7 @@ public class CharController : MonoBehaviour {
         controller = GetComponent<CharacterController>();
         initialPos = transform.position;
         anim = GetComponent<Animator>();
+        source = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -106,6 +109,18 @@ public class CharController : MonoBehaviour {
             {
                 ableToJump = true;
             }
+
+            if (!source.isPlaying)
+            {
+                if (controller.velocity != Vector3.zero)
+                {
+                    source.PlayOneShot(running);
+                }
+            }
+            else if (source.isPlaying && controller.velocity == Vector3.zero)
+            {
+                source.Stop();
+            }
         }
         else
         {
@@ -116,6 +131,7 @@ public class CharController : MonoBehaviour {
                 jumpingCount = 0;
             }
             moveDirection.y += gravity * dt;
+            source.Stop();
         }
 
         moveDirection = transform.TransformDirection(moveDirection);

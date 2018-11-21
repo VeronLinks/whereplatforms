@@ -25,7 +25,7 @@ public class bullet : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        transform.Rotate(Vector3.right, 400f * Time.deltaTime);
+        transform.Rotate(Vector3.right, 200f * Time.deltaTime);
         transform.position = Vector3.MoveTowards(transform.position, direction, speed * Time.deltaTime);
     }
 
