@@ -383,6 +383,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4501903411537258, guid: 52b2dd90b973b4b4cae0206dc54205e3,
     type: 2}
   m_PrefabInternal: {fileID: 144663193}
+--- !u!1 &148012558 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1390242743017140, guid: 384ce3b436b55c445974fe0c6183050e,
+    type: 2}
+  m_PrefabInternal: {fileID: 450426452}
+--- !u!20 &148012562 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 20602297380742310, guid: 384ce3b436b55c445974fe0c6183050e,
+    type: 2}
+  m_PrefabInternal: {fileID: 450426452}
+--- !u!114 &148012564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 148012558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e444833b6cefa364f984e52d0778c1b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &170302801
 Prefab:
   m_ObjectHideFlags: 0
@@ -443,32 +464,32 @@ Prefab:
     - target: {fileID: 224356513919690414, guid: f3ccf9a7eafc8a24aa486d69907ba167,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: -1189
+      value: -175
       objectReference: {fileID: 0}
     - target: {fileID: 224356513919690414, guid: f3ccf9a7eafc8a24aa486d69907ba167,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: -608
+      value: -38
       objectReference: {fileID: 0}
     - target: {fileID: 224356513919690414, guid: f3ccf9a7eafc8a24aa486d69907ba167,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 224356513919690414, guid: f3ccf9a7eafc8a24aa486d69907ba167,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 224356513919690414, guid: f3ccf9a7eafc8a24aa486d69907ba167,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 224356513919690414, guid: f3ccf9a7eafc8a24aa486d69907ba167,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 224356513919690414, guid: f3ccf9a7eafc8a24aa486d69907ba167,
         type: 2}
@@ -720,6 +741,11 @@ Prefab:
       propertyPath: respawn
       value: 
       objectReference: {fileID: 719417487}
+    - target: {fileID: 114660522015901464, guid: 45f85e71e940c6d42933868d0481572b,
+        type: 2}
+      propertyPath: useController
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45f85e71e940c6d42933868d0481572b, type: 2}
   m_IsPrefabAsset: 0
@@ -1094,11 +1120,29 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1224591077166320, guid: 45f85e71e940c6d42933868d0481572b,
     type: 2}
   m_PrefabInternal: {fileID: 291074473}
+--- !u!114 &545569460 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114660522015901464, guid: 45f85e71e940c6d42933868d0481572b,
+    type: 2}
+  m_PrefabInternal: {fileID: 291074473}
+  m_Script: {fileID: 11500000, guid: 28c2b824614427b438c27772929e9f58, type: 3}
 --- !u!4 &545569463 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4756606375425124, guid: 45f85e71e940c6d42933868d0481572b,
     type: 2}
   m_PrefabInternal: {fileID: 291074473}
+--- !u!114 &545569464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 545569458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aed3c0179646df49a5e60cb4b3ba42f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thePlayer: {fileID: 545569460}
 --- !u!1001 &562967445
 Prefab:
   m_ObjectHideFlags: 0
@@ -1796,9 +1840,9 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 148012562}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
