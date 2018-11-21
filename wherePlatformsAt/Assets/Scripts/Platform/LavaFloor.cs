@@ -7,11 +7,22 @@ public class LavaFloor : MonoBehaviour {
     public Transform player;
     public Transform respawn;
     PlayerController lives;
+    public AudioClip lavaBackground;
+    public AudioClip lavaFall;
 
-	void OnTriggerEnter(Collider other)
+    private AudioSource source;
+
+    private void Start()
+    {
+        source = GetComponent<AudioSource>();
+        source.PlayOneShot(lavaBackground);
+    }
+
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
+            source.PlayOneShot(lavaFall);
             Debug.Log("Respawning");
             player.transform.position = respawn.position;
             

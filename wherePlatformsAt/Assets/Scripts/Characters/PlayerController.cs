@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour {
     public Transform firePoint;
     public Transform center;
     public Transform respawn;
+    public AudioClip unlock;
+    public AudioClip bounce;
 
     private float time = 0;
     private float endtime;
@@ -23,6 +25,7 @@ public class PlayerController : MonoBehaviour {
     private int score = 0;
     private int lives = 3;
     private string door = "Closed";
+    private AudioSource source;
 
     private CharController playerChar;
 
@@ -36,6 +39,7 @@ public class PlayerController : MonoBehaviour {
         shield.GetComponent<MeshRenderer>().enabled = false;
         axe.GetComponent<MeshRenderer>().enabled = false;
 
+        source = GetComponent<AudioSource>();
         playerChar = GetComponent<CharController>();
         InvokeRepeating("Count", 0.0f, 1.0f);
     }
@@ -93,16 +97,19 @@ public class PlayerController : MonoBehaviour {
         }
         if (other.gameObject.tag == "Finish")
         {
+            source.PlayOneShot(unlock);
             PlayerPrefs.SetFloat("Timer", time);
             
             SceneManager.LoadScene(3); 
         }
         if (other.gameObject.tag == "bouncyS")
         {
+            source.PlayOneShot(bounce);
             playerChar.moveDirection.y = 15;
         }
         if (other.gameObject.tag == "bouncyB")
         {
+            source.PlayOneShot(bounce);
             playerChar.moveDirection.y = 30;
         }
         if (other.gameObject.tag == "Lava")
