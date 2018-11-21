@@ -8,6 +8,8 @@ Assets/AssetStoreTools*
 Mono/
 test_Data/
 .vs/
+wherePlatformsAt\Library\CurrentLayout.dwlt
+Library/CurrentLayout.dwlt
 
 # Visual Studio 2015 cache directory
 /.vs/
