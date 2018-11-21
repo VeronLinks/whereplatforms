@@ -5,8 +5,8 @@ using UnityEngine;
 /*
  * Author: Javier Verón
  * 
- * This camera works for both first person and third person, but in this last one it also needs the CameraController, 
- * which it doesn't for first person.
+ * This camera works for third person even if it was originally oriented to be for first person
+ * It also needs the CameraController.
  */
 
 public class FirstPersonCamera : MonoBehaviour {
