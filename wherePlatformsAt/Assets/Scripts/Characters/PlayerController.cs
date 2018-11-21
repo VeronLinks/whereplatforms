@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour {
     public Transform firePoint;
     public Transform center;
     public Transform respawn;
+    public bool useController;
 
     private float time = 0;
     private float endtime;
@@ -46,20 +47,60 @@ public class PlayerController : MonoBehaviour {
         playerChar.HorizontalAxis = Input.GetAxisRaw("Horizontal");
         playerChar.JumpTrigger = Input.GetKey(KeyCode.Space);
 
-        if (Input.GetMouseButton(0) && ammo > 0) //fires if the mouse button is clicked and you have ammo, 
+        if (!useController)
         {
-            if (canFire)
+            if (Input.GetMouseButton(0) && ammo > 0) //fires if the mouse button is clicked and you have ammo, 
             {
-                canFire = false;
-                Fire();
-                ammo--;
+                if (canFire)
+                {
+                    canFire = false;
+                    Fire();
+                    ammo--;
+                }
+            }
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                canFire = true;
             }
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if (useController)
         {
-            canFire = true;
+            playerChar.JumpTrigger = Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKey(KeyCode.Joystick1Button4);
+
+            if (Input.GetKey(KeyCode.Joystick1Button5) && ammo > 0) //fires if the mouse button is clicked and you have ammo, 
+            {
+                if (canFire)
+                {
+                    canFire = false;
+                    Fire();
+                    ammo--;
+                }
+            }
+
+            if (Input.GetKeyUp(KeyCode.Joystick1Button5))
+            {
+                canFire = true;
+            }
+
+            if (Input.GetMouseButton(0) && ammo > 0) //fires if the mouse button is clicked and you have ammo, 
+            {
+                if (canFire)
+                {
+                    canFire = false;
+                    Fire();
+                    ammo--;
+                }
+            }
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                canFire = true;
+            }
+
         }
+
         if(lives == 0)
         {
             SceneManager.LoadScene(0);
