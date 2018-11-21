@@ -35,6 +35,10 @@ public class FirstPersonCamera : MonoBehaviour {
 
     void Update()
     {
+        var angH = Input.GetAxis("Rhorizontal") * 60;
+        var angV = Input.GetAxis("Rverticle") * 45;
+        transform.localEulerAngles = new Vector3(angV, angH, 0);
+
         float dt = Time.deltaTime;
         //mouse delta
         if (Cursor.lockState == CursorLockMode.Locked)

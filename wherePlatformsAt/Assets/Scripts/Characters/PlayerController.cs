@@ -13,9 +13,15 @@ public class PlayerController : MonoBehaviour {
     public Transform center;
     public Transform respawn;
 
+    public AudioClip unlock;
+    public AudioClip bounce;
+
+    public bool useController;
+
+
     private float time = 0;
     private float endtime;
-    
+
 
     private bool canFire = true;
     private bool hasShield = false;
@@ -23,6 +29,7 @@ public class PlayerController : MonoBehaviour {
     private int score = 0;
     private int lives = 3;
     private string door = "Closed";
+    private AudioSource source;
 
     private CharController playerChar;
 
@@ -36,6 +43,8 @@ public class PlayerController : MonoBehaviour {
         shield.GetComponent<MeshRenderer>().enabled = false;
         axe.GetComponent<MeshRenderer>().enabled = false;
 
+        source = GetComponent<AudioSource>();
+        playerChar = GetComponent<CharController>();
         InvokeRepeating("Count", 0.0f, 1.0f);
 
         if (respawn == null)
@@ -50,24 +59,64 @@ public class PlayerController : MonoBehaviour {
         playerChar.HorizontalAxis = Input.GetAxisRaw("Horizontal");
         playerChar.JumpTrigger = Input.GetKey(KeyCode.Space);
 
-        if (Input.GetMouseButton(0) && ammo > 0) //fires if the mouse button is clicked and you have ammo, 
+        if (!useController)
         {
-            if (canFire)
+            if (Input.GetMouseButton(0) && ammo > 0) //fires if the mouse button is clicked and you have ammo,
             {
-                canFire = false;
-                Fire();
-                ammo--;
+                if (canFire)
+                {
+                    canFire = false;
+                    Fire();
+                    ammo--;
+                }
+            }
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                canFire = true;
             }
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if (useController)
         {
-            canFire = true;
+            playerChar.JumpTrigger = Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKey(KeyCode.Joystick1Button4);
+
+            if (Input.GetKey(KeyCode.Joystick1Button5) && ammo > 0) //fires if the mouse button is clicked and you have ammo,
+            {
+                if (canFire)
+                {
+                    canFire = false;
+                    Fire();
+                    ammo--;
+                }
+            }
+
+            if (Input.GetKeyUp(KeyCode.Joystick1Button5))
+            {
+                canFire = true;
+            }
+
+            if (Input.GetMouseButton(0) && ammo > 0) //fires if the mouse button is clicked and you have ammo,
+            {
+                if (canFire)
+                {
+                    canFire = false;
+                    Fire();
+                    ammo--;
+                }
+            }
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                canFire = true;
+            }
+
         }
+
         if(lives == 0)
         {
             SceneManager.LoadScene(0);
-            
+
         }
 
         if(ammo > 0)
@@ -78,7 +127,7 @@ public class PlayerController : MonoBehaviour {
         {
             axe.GetComponent<MeshRenderer>().enabled = false;
         }
-        
+
     }
 
     void OnTriggerEnter(Collider other)
@@ -93,20 +142,23 @@ public class PlayerController : MonoBehaviour {
             else
             {
                 transform.position = respawn.position;
-            } 
+            }
         }
         if (other.gameObject.tag == "Finish")
         {
+            source.PlayOneShot(unlock);
             PlayerPrefs.SetFloat("Timer", time);
-            
-            SceneManager.LoadScene(3); 
+
+            SceneManager.LoadScene(3);
         }
         if (other.gameObject.tag == "bouncyS")
         {
+            source.PlayOneShot(bounce);
             playerChar.moveDirection.y = 15;
         }
         if (other.gameObject.tag == "bouncyB")
         {
+            source.PlayOneShot(bounce);
             playerChar.moveDirection.y = 30;
         }
         if (other.gameObject.tag == "Lava")
@@ -114,7 +166,7 @@ public class PlayerController : MonoBehaviour {
             lives--;
         }
         if (other.gameObject.tag == "Ammo") //if player collides with the ammo prefab
-        { 
+        {
             Destroy(other.gameObject);
             ammo += 5;
             if (ammo > 25) //limits ammo to 25
