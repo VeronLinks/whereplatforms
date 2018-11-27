@@ -99,6 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   seconds: 3
+  shoot: {fileID: 8300000, guid: 9c630295c5a782c408beb253a2237043, type: 3}
 --- !u!136 &136096373582627740
 CapsuleCollider:
   m_ObjectHideFlags: 1
