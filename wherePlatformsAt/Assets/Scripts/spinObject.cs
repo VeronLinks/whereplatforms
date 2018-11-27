@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ammoPickup : MonoBehaviour {
+public class spinObject : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {}

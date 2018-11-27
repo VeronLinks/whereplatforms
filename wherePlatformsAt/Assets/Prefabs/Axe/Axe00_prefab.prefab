@@ -8,28 +8,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 427898}
+  - component: {fileID: 33465781172425574}
+  - component: {fileID: 23123947224796364}
+  - component: {fileID: 54904048089329272}
+  - component: {fileID: 65273133884458944}
+  - component: {fileID: 114076845030415540}
   m_Layer: 0
   m_Name: Axe00_prefab
-  m_TagString: PlayerBullet
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &196734
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 485808}
-  - component: {fileID: 3347616}
-  - component: {fileID: 2347216}
-  - component: {fileID: 5438726}
-  - component: {fileID: 6564078}
-  - component: {fileID: 114288983074304576}
-  m_Layer: 0
-  m_Name: Axe
   m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,31 +29,28 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 485808}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &485808
-Transform:
+--- !u!1001 &100100000
+Prefab:
   m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 196734}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 427898}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &2347216
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 174004}
+  m_IsPrefabAsset: 1
+--- !u!23 &23123947224796364
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 196734}
-  m_Enabled: 0
+  m_GameObject: {fileID: 174004}
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -97,19 +79,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &3347616
+--- !u!33 &33465781172425574
 MeshFilter:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 196734}
+  m_GameObject: {fileID: 174004}
   m_Mesh: {fileID: 4300000, guid: 8b1b8c6927c7e48458cd5a3240f876f6, type: 3}
---- !u!54 &5438726
+--- !u!54 &54904048089329272
 Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 196734}
+  m_GameObject: {fileID: 174004}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -119,35 +101,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 96
   m_CollisionDetection: 0
---- !u!65 &6564078
+--- !u!65 &65273133884458944
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 196734}
+  m_GameObject: {fileID: 174004}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.05937464, y: 0.75581926, z: 0.28539732}
   m_Center: {x: 0, y: 0.37557033, z: 0.09447702}
---- !u!1001 &100100000
-Prefab:
-  m_ObjectHideFlags: 1
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications: []
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 174004}
-  m_IsPrefabAsset: 1
---- !u!114 &114288983074304576
+--- !u!114 &114076845030415540
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 196734}
+  m_GameObject: {fileID: 174004}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46124b3968af90347b2d2c51999482ca, type: 3}
