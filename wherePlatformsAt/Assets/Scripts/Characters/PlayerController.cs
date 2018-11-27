@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour {
 
     public AudioClip unlock;
     public AudioClip bounce;
+    public AudioClip thrown;
+    public AudioClip thud;
+    public AudioClip hit;
 
     public bool useController;
 
@@ -64,6 +67,7 @@ public class PlayerController : MonoBehaviour {
             {
                 if (canFire)
                 {
+                    source.PlayOneShot(thrown);
                     canFire = false;
                     Fire();
                     ammo--;
@@ -84,6 +88,7 @@ public class PlayerController : MonoBehaviour {
             {
                 if (canFire)
                 {
+                    source.PlayOneShot(thrown);
                     canFire = false;
                     Fire();
                     ammo--;
@@ -137,9 +142,11 @@ public class PlayerController : MonoBehaviour {
             {
                 hasShield = false;
                 shield.GetComponent<MeshRenderer>().enabled = false;
+                source.PlayOneShot(thud);
             }
             else
             {
+                source.PlayOneShot(hit);
                 transform.position = respawn.position;
             }
         }
