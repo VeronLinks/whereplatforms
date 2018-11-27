@@ -26,7 +26,6 @@ public class PlayerController : MonoBehaviour {
     private bool canFire = true;
     private bool hasShield = false;
     private int ammo = 0;
-    private int score = 0;
     private int lives = 3;
     private string door = "Closed";
     private AudioSource source;
@@ -177,7 +176,7 @@ public class PlayerController : MonoBehaviour {
         if (other.gameObject.tag == "Collectable") //if player collides with the collectable prefab
         {
             Destroy(other.gameObject);
-            score++;
+            time = time - 10;
         }
         if (other.gameObject.tag == "Key") //if player collides with the key
         {
@@ -203,9 +202,8 @@ public class PlayerController : MonoBehaviour {
     void OnGUI() //prints HUD out to the screen
     {
         GUI.Box(new Rect(10, 10, 100, 30), "Door: " + door);
-        GUI.Box(new Rect(120, 10, 100, 30), "Score: " + score);
-        GUI.Box(new Rect(230, 10, 100, 30), "Lives: " + lives);
-        GUI.Box(new Rect(340, 10, 100, 30), "Ammo: " + ammo);
-        GUI.Box(new Rect(450, 10, 100, 30), "timer: " + time);
+        GUI.Box(new Rect(120, 10, 100, 30), "Lives: " + lives);
+        GUI.Box(new Rect(230, 10, 100, 30), "Ammo: " + ammo);
+        GUI.Box(new Rect(340, 10, 100, 30), "timer: " + time);
     }
 }
