@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    
-    time = PlayerPrefs.GetFloat("Timer", 0)
+    float time;
+    public InputField playerName;
+   // time = PlayerPrefs.GetFloat("Timer", 0);
     // Use this for initialization
     void Start()
     {
@@ -16,6 +17,10 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<LeaderBoard>().checkForTime(time);
+        
+    }
+    public void IntialsEntered()
+    {
+        GetComponent<LeaderBoard>().checkForTime(time, playerName.text);
     }
 }
