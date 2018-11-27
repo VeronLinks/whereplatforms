@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour {
     public bool useController;
 
 
-    private float time = 0;
+    public static float time = 0;
     private float endtime;
 
 
