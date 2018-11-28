@@ -31,7 +31,7 @@ public class EnemyFollowWithinSpecifiedDistance : MonoBehaviour {
 
     private void Start()
     {
-        distToFall = Mathf.Sqrt((cController.maxVel * cController.maxVel) + (transform.position.y + cCollider.height/2 * transform.position.y + cCollider.height/2));
+        distToFall = Mathf.Sqrt((cController.maxVel * cController.maxVel) + ((transform.position.y + cCollider.height/2) * (transform.position.y + cCollider.height/2)));
     }
 
     private void Update()
