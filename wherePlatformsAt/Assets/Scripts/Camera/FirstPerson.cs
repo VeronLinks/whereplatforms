@@ -16,17 +16,17 @@ public class FirstPerson : MonoBehaviour
 
     Vector2 mouseLook;
     Vector2 smoothV;
-    GameObject character;
+    Transform character;
 
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        character = this.transform.parent.gameObject;
     }
 
     void Update()
     {
+        character = this.transform.parent;
         //mouse delta
         if (Cursor.lockState == CursorLockMode.Locked)
         {
@@ -39,7 +39,7 @@ public class FirstPerson : MonoBehaviour
                 smoothV.y = Mathf.Lerp(smoothV.y, md.y, 1f / smoothing);
                 mouseLook += smoothV;
                 transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
-                character.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, character.transform.up);
+                character.localRotation = Quaternion.AngleAxis(mouseLook.x, character.up);
 
             }
             else
