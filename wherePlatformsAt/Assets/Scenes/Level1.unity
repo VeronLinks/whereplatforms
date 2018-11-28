@@ -551,12 +551,12 @@ Prefab:
     - target: {fileID: 224356513919690414, guid: f3ccf9a7eafc8a24aa486d69907ba167,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -594.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224356513919690414, guid: f3ccf9a7eafc8a24aa486d69907ba167,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -304
+      value: -74
       objectReference: {fileID: 0}
     - target: {fileID: 224356513919690414, guid: f3ccf9a7eafc8a24aa486d69907ba167,
         type: 2}
@@ -627,6 +627,10 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: quitGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255946215433850, guid: f3ccf9a7eafc8a24aa486d69907ba167, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3ccf9a7eafc8a24aa486d69907ba167, type: 2}
