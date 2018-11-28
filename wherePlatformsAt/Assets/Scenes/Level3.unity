@@ -893,6 +893,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4030265937643786, guid: ab7e4379616633d4fae805cc74f50740,
     type: 2}
   m_PrefabInternal: {fileID: 1654051247}
+--- !u!1 &277025612 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1999745694734800, guid: 45f85e71e940c6d42933868d0481572b,
+    type: 2}
+  m_PrefabInternal: {fileID: 691776786}
 --- !u!1001 &292835226
 Prefab:
   m_ObjectHideFlags: 0
@@ -1624,6 +1629,16 @@ Prefab:
       propertyPath: characterReference
       value: 
       objectReference: {fileID: 543694483}
+    - target: {fileID: 114134891436131462, guid: 384ce3b436b55c445974fe0c6183050e,
+        type: 2}
+      propertyPath: fieldOfViewFP
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 114134891436131462, guid: 384ce3b436b55c445974fe0c6183050e,
+        type: 2}
+      propertyPath: shadowMeshOfPlayer
+      value: 
+      objectReference: {fileID: 277025612}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 384ce3b436b55c445974fe0c6183050e, type: 2}
   m_IsPrefabAsset: 0
