@@ -104,6 +104,7 @@ public class PlayerController : MonoBehaviour {
             }
             else
             {
+                lives--;
                 source.PlayOneShot(hit);
                 transform.position = respawn.position;
             }
