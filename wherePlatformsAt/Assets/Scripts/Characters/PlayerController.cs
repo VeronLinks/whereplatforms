@@ -184,6 +184,10 @@ public class PlayerController : MonoBehaviour {
         {
             Destroy(other.gameObject);
             time = time - 10;
+            if (time < 0){
+                time = 0;
+            }
+            
         }
         if (other.gameObject.tag == "Key") //if player collides with the key
         {
