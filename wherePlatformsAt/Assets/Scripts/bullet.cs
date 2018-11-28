@@ -12,6 +12,7 @@ public class Bullet : MonoBehaviour {
     public float seconds;
     public float speed;
 
+    private EnemyController theE;
     private Transform target;
     private Vector3 direction;
 
@@ -52,6 +53,7 @@ public class Bullet : MonoBehaviour {
         else if (col.gameObject.tag == "Enemy")
         {
             col.gameObject.GetComponent<EnemyController>().Death();
+            theE.alive = false;
             Destroy(this.gameObject);
         }
     }
