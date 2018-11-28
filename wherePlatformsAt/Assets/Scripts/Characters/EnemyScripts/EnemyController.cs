@@ -32,7 +32,7 @@ public class EnemyController : MonoBehaviour
         Dead
     }
 
-    private bool alive;
+    public bool alive;
 
     public bool Alive
     {

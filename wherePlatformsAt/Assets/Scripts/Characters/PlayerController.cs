@@ -21,8 +21,6 @@ public class PlayerController : MonoBehaviour
     public AudioClip hit;
     public AudioClip collect;
 
-    public bool useController;
-
 
     public static float time = 0;
     private float endtime;
@@ -62,9 +60,7 @@ public class PlayerController : MonoBehaviour
         playerChar.VerticalAxis = Input.GetAxisRaw("Vertical");
         playerChar.HorizontalAxis = Input.GetAxisRaw("Horizontal");
         playerChar.JumpTrigger = Input.GetKey(KeyCode.Space);
-
-        if (!useController)
-        {
+        
             if (Input.GetMouseButton(0) && ammo > 0) //fires if the mouse button is clicked and you have ammo,
             {
                 if (canFire)
@@ -80,44 +76,6 @@ public class PlayerController : MonoBehaviour
             {
                 canFire = true;
             }
-        }
-
-        if (useController)
-        {
-            playerChar.JumpTrigger = Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKey(KeyCode.Joystick1Button4);
-
-            if (Input.GetKey(KeyCode.Joystick1Button5) && ammo > 0) //fires if the mouse button is clicked and you have ammo,
-            {
-                if (canFire)
-                {
-                    source.PlayOneShot(thrown);
-                    canFire = false;
-                    Fire();
-                    ammo--;
-                }
-            }
-
-            if (Input.GetKeyUp(KeyCode.Joystick1Button5))
-            {
-                canFire = true;
-            }
-
-            if (Input.GetMouseButton(0) && ammo > 0) //fires if the mouse button is clicked and you have ammo,
-            {
-                if (canFire)
-                {
-                    canFire = false;
-                    Fire();
-                    ammo--;
-                }
-            }
-
-            if (Input.GetMouseButtonUp(0))
-            {
-                canFire = true;
-            }
-
-        }
 
         if (lives == 0)
         {
@@ -148,6 +106,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
+                lives--;
                 source.PlayOneShot(hit);
                 transform.position = respawn.position;
             }
