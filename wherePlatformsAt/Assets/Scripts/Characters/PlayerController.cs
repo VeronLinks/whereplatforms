@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour
+{
 
     public GameObject bullet;
     public GameObject shield;
@@ -18,6 +19,7 @@ public class PlayerController : MonoBehaviour {
     public AudioClip thrown;
     public AudioClip thud;
     public AudioClip hit;
+    public AudioClip collect;
 
     public bool useController;
 
@@ -117,13 +119,13 @@ public class PlayerController : MonoBehaviour {
 
         }
 
-        if(lives == 0)
+        if (lives == 0)
         {
             SceneManager.LoadScene(0);
 
         }
 
-        if(ammo > 0)
+        if (ammo > 0)
         {
             axe.GetComponent<MeshRenderer>().enabled = true;
         }
@@ -138,7 +140,7 @@ public class PlayerController : MonoBehaviour {
     {
         if (other.gameObject.tag == "enemBullet")
         {
-            if(hasShield == true)
+            if (hasShield == true)
             {
                 hasShield = false;
                 shield.GetComponent<MeshRenderer>().enabled = false;
@@ -182,12 +184,14 @@ public class PlayerController : MonoBehaviour {
         }
         if (other.gameObject.tag == "Collectable") //if player collides with the collectable prefab
         {
+            source.PlayOneShot(collect);
             Destroy(other.gameObject);
             time = time - 10;
-            if (time < 0){
+            if (time < 0)
+            {
                 time = 0;
             }
-            
+
         }
         if (other.gameObject.tag == "Key") //if player collides with the key
         {
@@ -217,4 +221,5 @@ public class PlayerController : MonoBehaviour {
         GUI.Box(new Rect(230, 10, 100, 30), "Ammo: " + ammo);
         GUI.Box(new Rect(340, 10, 100, 30), "timer: " + time);
     }
+
 }

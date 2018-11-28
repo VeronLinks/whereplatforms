@@ -424,7 +424,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4339120263766280, guid: 536ac1858d58e3348b81abaaeaeea81d, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4339120263766280, guid: 536ac1858d58e3348b81abaaeaeea81d, type: 2}
       propertyPath: m_LocalScale.y
@@ -965,7 +965,7 @@ Prefab:
       objectReference: {fileID: 8300000, guid: 3f735dbdefb8b7448a1b89f9f55ed1a5, type: 3}
     - target: {fileID: 4306854255470346, guid: 45f85e71e940c6d42933868d0481572b, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114236249075503780, guid: 45f85e71e940c6d42933868d0481572b,
         type: 2}
@@ -1039,6 +1039,16 @@ Prefab:
       propertyPath: hit
       value: 
       objectReference: {fileID: 8300000, guid: e61b2b9ce4ca9e64a8f3184b8c7c806d, type: 3}
+    - target: {fileID: 114236249075503780, guid: 45f85e71e940c6d42933868d0481572b,
+        type: 2}
+      propertyPath: barrel
+      value: 
+      objectReference: {fileID: 8300000, guid: 16f63fd157e400b4fb4d1a6d89b102d8, type: 3}
+    - target: {fileID: 114236249075503780, guid: 45f85e71e940c6d42933868d0481572b,
+        type: 2}
+      propertyPath: collect
+      value: 
+      objectReference: {fileID: 8300000, guid: 16f63fd157e400b4fb4d1a6d89b102d8, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45f85e71e940c6d42933868d0481572b, type: 2}
   m_IsPrefabAsset: 0
