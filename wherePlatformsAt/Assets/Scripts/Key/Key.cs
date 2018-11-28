@@ -26,6 +26,8 @@ public class Key : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             source.PlayOneShot(unlock);
+            this.GetComponent<MeshRenderer>().enabled = false;
+
             Door.GetComponent<MeshRenderer>().enabled = false;
             Door.GetComponent<Collider>().enabled = false;
             //Destroy(this.gameObject);
