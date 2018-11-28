@@ -630,7 +630,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1255946215433850, guid: f3ccf9a7eafc8a24aa486d69907ba167, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3ccf9a7eafc8a24aa486d69907ba167, type: 2}
@@ -1060,6 +1060,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1669173276829138, guid: 45f85e71e940c6d42933868d0481572b,
     type: 2}
   m_PrefabInternal: {fileID: 291074473}
+--- !u!4 &291074481 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4625597403916234, guid: 45f85e71e940c6d42933868d0481572b,
+    type: 2}
+  m_PrefabInternal: {fileID: 291074473}
 --- !u!1001 &417931029
 Prefab:
   m_ObjectHideFlags: 0
@@ -1281,6 +1286,16 @@ Prefab:
         type: 2}
       propertyPath: fieldOfViewFP
       value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 114021714873335912, guid: 384ce3b436b55c445974fe0c6183050e,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 291074481}
+    - target: {fileID: 114550904171561236, guid: 384ce3b436b55c445974fe0c6183050e,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 384ce3b436b55c445974fe0c6183050e, type: 2}
