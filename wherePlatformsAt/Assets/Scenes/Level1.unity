@@ -2815,7 +2815,7 @@ Prefab:
         type: 2}
       propertyPath: Player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 291074474}
     - target: {fileID: 23987872297844662, guid: ffb8d16bc272232458dd7707559e1d14,
         type: 2}
       propertyPath: m_Materials.Array.data[0]

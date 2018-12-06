@@ -41,7 +41,7 @@ public class InvisiblePlatformPattern : MonoBehaviour {
     {
         while (true)
         {
-            for (int i = 0; i < platformArray.Length; i++) //goes through platform array.
+            for (int i = 0; i < platformArray.Length; i++) //goes through platform array to each platform.
             {
                 StartCoroutine(Run(i)); //makes platform visible
                 yield return new WaitForSecondsRealtime(timeToSpawn); 

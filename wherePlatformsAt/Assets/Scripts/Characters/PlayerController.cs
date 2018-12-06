@@ -120,12 +120,12 @@ public class PlayerController : MonoBehaviour
         }
         if (other.gameObject.tag == "bouncyS")
         {
-            source.PlayOneShot(bounce);
+            source.PlayOneShot(bounce); //bounce sound
             playerChar.moveDirection.y = 15;
         }
         if (other.gameObject.tag == "bouncyB")
         {
-            source.PlayOneShot(bounce);
+            source.PlayOneShot(bounce); //bounce sound
             playerChar.moveDirection.y = 30;
         }
         if (other.gameObject.tag == "Lava")
