@@ -439,6 +439,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1166837763805696, guid: 536ac1858d58e3348b81abaaeaeea81d, type: 2}
+      propertyPath: m_TagString
+      value: Level2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 536ac1858d58e3348b81abaaeaeea81d, type: 2}
   m_IsPrefabAsset: 0
@@ -729,7 +733,7 @@ Prefab:
         type: 2}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 291074481}
     - target: {fileID: 114924650806553948, guid: 1b1ae0a2d184d32458f3494437e4471e,
         type: 2}
       propertyPath: respawn

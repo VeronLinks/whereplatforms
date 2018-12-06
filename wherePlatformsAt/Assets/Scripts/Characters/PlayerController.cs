@@ -118,6 +118,10 @@ public class PlayerController : MonoBehaviour
 
             SceneManager.LoadScene(3);
         }
+        if (other.gameObject.tag == "Level2")
+        {
+            SceneManager.LoadScene(5);
+        }
         if (other.gameObject.tag == "bouncyS")
         {
             source.PlayOneShot(bounce); //bounce sound
